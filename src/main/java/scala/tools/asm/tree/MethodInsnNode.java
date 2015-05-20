@@ -43,6 +43,7 @@ public class MethodInsnNode extends AbstractInsnNode {
   /**
    * The internal name of the method's owner class (see {@link
    * scala.tools.asm.Type#getInternalName()}).
+   * For methods of arrays, e.g., clone(), the array type descriptor.
    */
   public String owner;
 
