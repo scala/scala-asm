@@ -203,6 +203,20 @@ public class Frame<V extends Value> {
     }
 
     /**
+     * Sets the value of the given stack slot.
+     *
+     * @param i
+     *   the index of an operand stack slot.
+     * @param value
+     *   the new value of the stack slot.
+     * @throws IndexOutOfBoundsException
+     *   if the stack slot does not exist.
+     */
+    public void setStack(final int i, final V value) throws IndexOutOfBoundsException {
+        values[i + locals] = value;
+    }
+
+    /**
      * Clears the operand stack of this frame.
      */
     public void clearStack() {
