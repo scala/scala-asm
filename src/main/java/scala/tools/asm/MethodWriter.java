@@ -36,7 +36,7 @@ package scala.tools.asm;
  * @author Eric Bruneton
  * @author Eugene Kuleshov
  */
-final class MethodWriter extends MethodVisitor {
+public final class MethodWriter extends MethodVisitor {
 
   /** Indicates that nothing must be computed. */
   static final int COMPUTE_NOTHING = 0;
@@ -312,8 +312,16 @@ final class MethodWriter extends MethodVisitor {
   /** The max_stack field of the Code attribute. */
   private int maxStack;
 
+  public int getMaxStack() {
+      return maxStack;
+  }
+
   /** The max_locals field of the Code attribute. */
   private int maxLocals;
+
+  public int getMaxLocals() {
+      return maxLocals;
+  }
 
   /** The 'code' field of the Code attribute. */
   private final ByteVector code = new ByteVector();
