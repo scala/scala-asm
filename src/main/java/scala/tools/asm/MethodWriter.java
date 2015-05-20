@@ -299,6 +299,8 @@ final class MethodWriter extends MethodVisitor {
   /** The name_index field of the method_info JVMS structure. */
   private final int nameIndex;
 
+  private final String name;
+
   /** The descriptor_index field of the method_info JVMS structure. */
   private final int descriptorIndex;
 
@@ -591,6 +593,7 @@ final class MethodWriter extends MethodVisitor {
     super(Opcodes.ASM6);
     this.symbolTable = symbolTable;
     this.accessFlags = "<init>".equals(name) ? access | Constants.ACC_CONSTRUCTOR : access;
+    this.name = name;
     this.nameIndex = symbolTable.addConstantUtf8(name);
     this.descriptorIndex = symbolTable.addConstantUtf8(descriptor);
     this.descriptor = descriptor;
@@ -2058,7 +2061,7 @@ final class MethodWriter extends MethodVisitor {
     // For ease of reference, we use here the same attribute order as in Section 4.7 of the JVMS.
     if (code.length > 0) {
       if (code.length > 65535) {
-        throw new IndexOutOfBoundsException("Method code too large!");
+        throw new RuntimeException("Method "+ name+ "'s code too large!");
       }
       symbolTable.addConstantUtf8(Constants.CODE);
       // The Code attribute has 6 header bytes, plus 2, 2, 4 and 2 bytes respectively for max_stack,
