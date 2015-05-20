@@ -623,7 +623,10 @@ public class MethodNode extends MethodVisitor {
      */
     protected LabelNode getLabelNode(final Label l) {
         if (!(l.info instanceof LabelNode)) {
-            l.info = new LabelNode();
+            // Patch in scala-asm: changed `new LabelNode()` to `new LabelNode(l)`
+            // TODO: check if this can go upstream, or if it is still discouraged
+            // https://mail.ow2.org/wws/arc/asm/2011-07/msg00032.html
+            l.info = new LabelNode(l);
         }
         return (LabelNode) l.info;
     }
