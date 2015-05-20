@@ -254,7 +254,7 @@ public abstract class Printer {
      */
     public Printer visitClassTypeAnnotation(final int typeRef,
             final TypePath typePath, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -454,7 +454,7 @@ public abstract class Printer {
      */
     public Printer visitFieldTypeAnnotation(final int typeRef,
             final TypePath typePath, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -488,7 +488,7 @@ public abstract class Printer {
      *            allowed (see {@link Opcodes}).
      */
     public void visitParameter(String name, int access) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -532,7 +532,7 @@ public abstract class Printer {
      */
     public Printer visitMethodTypeAnnotation(final int typeRef,
             final TypePath typePath, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -764,7 +764,7 @@ public abstract class Printer {
             visitMethodInsn(opcode, owner, name, desc, itf);
             return;
         }
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -795,7 +795,7 @@ public abstract class Printer {
             visitMethodInsn(opcode, owner, name, desc);
             return;
         }
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -977,7 +977,7 @@ public abstract class Printer {
      */
     public Printer visitInsnAnnotation(final int typeRef,
             final TypePath typePath, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -1022,7 +1022,7 @@ public abstract class Printer {
      */
     public Printer visitTryCatchAnnotation(final int typeRef,
             final TypePath typePath, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
@@ -1086,7 +1086,7 @@ public abstract class Printer {
     public Printer visitLocalVariableAnnotation(final int typeRef,
             final TypePath typePath, final Label[] start, final Label[] end,
             final int[] index, final String desc, final boolean visible) {
-        throw new RuntimeException("Must be overriden");
+        throw new RuntimeException("Must be overridden");
     }
 
     /**
