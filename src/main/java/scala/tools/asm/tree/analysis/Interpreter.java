@@ -31,6 +31,7 @@ import java.util.List;
 
 import scala.tools.asm.Type;
 import scala.tools.asm.tree.AbstractInsnNode;
+import scala.tools.asm.tree.TryCatchBlockNode;
 
 /**
  * A semantic bytecode interpreter. More precisely, this interpreter only manages the computation of
@@ -88,6 +89,55 @@ public abstract class Interpreter<V extends Value> {
    * @throws AnalyzerException if an error occurred during the interpretation.
    */
   public abstract V newOperation(AbstractInsnNode insn) throws AnalyzerException;
+
+  /**
+   * Called by the analyzer for initializing the return type value of a frame.
+   */
+  public V newReturnTypeValue(Type type) {
+      return newValue(type);
+  }
+
+  /**
+   * Called by the analyzer when initializing the value of a parameter in a frame.
+   */
+  public V newParameterValue(boolean isInstanceMethod, int local, Type type) {
+      return newValue(type);
+  }
+
+  /**
+   * Called by the analyzer when initializing a non-parameter local in a frame.
+   * This method has to return a size-1 value representing an empty slot.
+   */
+  public V newEmptyNonParameterLocalValue(int local) {
+      return newValue(null);
+  }
+
+  /**
+   * Called by the analyzer and the interpreter. When initializing or setting the value of a
+   * size-2 local, the value of the subsequent slot is reset using this method.
+   * This method has to return a size-1 value representing an empty slot.
+   */
+  public V newEmptyValueAfterSize2Local(int local) {
+      return newValue(null);
+  }
+
+  /**
+   * Called by the interpreter. When setting the value of a local variable, the interpreter checks
+   * whether the current value stored at the preceding index is of size-2. In this case, the
+   * preceding size-2 value is no longer valid and reset using this method.
+   * This method has to return a size-1 value representing an empty slot.
+   */
+  public V newEmptyValueForPreviousSize2Local(int local) {
+      return newValue(null);
+  }
+
+  /**
+   * Called by the analyzer when initializing the exception value on the call stack at the entry
+   * of an exception handler.
+   */
+  public V newExceptionValue(TryCatchBlockNode tryCatchBlockNode, Frame handlerFrame, Type exceptionType) {
+      return newValue(exceptionType);
+  }
 
   /**
    * Interprets a bytecode instruction that moves a value on the stack or to or from local
