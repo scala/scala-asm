@@ -158,21 +158,26 @@ public class Analyzer<V extends Value> implements Opcodes {
         // initializes the data structures for the control flow analysis
         Frame<V> current = newFrame(m.maxLocals, m.maxStack);
         Frame<V> handler = newFrame(m.maxLocals, m.maxStack);
-        current.setReturn(interpreter.newValue(Type.getReturnType(m.desc)));
+        current.setReturn(interpreter.newReturnTypeValue(Type.getReturnType(m.desc)));
         Type[] args = Type.getArgumentTypes(m.desc);
         int local = 0;
-        if ((m.access & ACC_STATIC) == 0) {
+        boolean isInstanceMethod = (m.access & ACC_STATIC) == 0;
+        if (isInstanceMethod) {
             Type ctype = Type.getObjectType(owner);
-            current.setLocal(local++, interpreter.newValue(ctype));
+            current.setLocal(local, interpreter.newParameterValue(isInstanceMethod, local, ctype));
+            local++;
         }
         for (int i = 0; i < args.length; ++i) {
-            current.setLocal(local++, interpreter.newValue(args[i]));
+            current.setLocal(local, interpreter.newParameterValue(isInstanceMethod, local, args[i]));
+            local++;
             if (args[i].getSize() == 2) {
-                current.setLocal(local++, interpreter.newValue(null));
+                current.setLocal(local, interpreter.newEmptyValueAfterSize2Local(local));
+                local++;
             }
         }
         while (local < m.maxLocals) {
-            current.setLocal(local++, interpreter.newValue(null));
+            current.setLocal(local, interpreter.newEmptyNonParameterLocalValue(local));
+            local++;
         }
         merge(0, current, null);
 
@@ -285,7 +290,7 @@ public class Analyzer<V extends Value> implements Opcodes {
                         if (newControlFlowExceptionEdge(insn, tcb)) {
                             handler.init(f);
                             handler.clearStack();
-                            handler.push(interpreter.newValue(type));
+                            handler.push(interpreter.newExceptionValue(tcb, handler, type));
                             merge(jump, handler, subroutine);
                         }
                     }
