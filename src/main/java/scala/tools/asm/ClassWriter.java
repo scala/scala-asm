@@ -1782,12 +1782,20 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Find item that whose index is `index`.
+     * Returns the item with a specific index.
+     *
+     * @param index
+     *            the index of the searched item.
+     * @return the item with the given index.
      */
     public Item findItemByIndex(int index) {
-        int i = 0;
-        while (i < items.length && (items[i] == null || items[i].index != index)) i++;
-        return items[i];
+        for (Item item : items) {
+            while (item != null) {
+                if (item.index == index) return item;
+                item = item.next;
+            }
+        }
+        return null;
     }
 
     /**
