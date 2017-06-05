@@ -1058,8 +1058,8 @@ public class MethodWriter extends MethodVisitor {
             /*
              * case of a backward jump with an offset < -32768. In this case we
              * automatically replace GOTO with GOTO_W, JSR with JSR_W and IFxxx
-             * <l> with IFNOTxxx <l'> GOTO_W <l>, where IFNOTxxx is the
-             * "opposite" opcode of IFxxx (i.e., IFNE for IFEQ) and where <l'>
+             * <l> with IFNOTxxx <L> GOTO_W <l> L:..., where IFNOTxxx is the
+             * "opposite" opcode of IFxxx (i.e., IFNE for IFEQ) and where <L>
              * designates the instruction just after the GOTO_W.
              */
             if (opcode == Opcodes.GOTO) {
@@ -1075,7 +1075,11 @@ public class MethodWriter extends MethodVisitor {
                 code.putByte(opcode <= 166 ? ((opcode + 1) ^ 1) - 1
                         : opcode ^ 1);
                 code.putShort(8); // jump offset
-                code.putByte(200); // GOTO_W
+                // ASM pseudo GOTO_W insn, see ClassReader. We don't use a real
+                // GOTO_W because we might need to insert a frame just after (as
+                // the target of the IFNOTxxx jump instruction).
+                code.putByte(220);
+                cw.hasAsmInsns = true; 
             }
             label.put(this, code, code.length - 1, true);
         } else if (isWide) {
