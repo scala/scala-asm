@@ -10,7 +10,7 @@ This repository contains a fork of the ASM Java bytecode manipulation and analys
 
 This is a fork (a git clone) of the offical asm repository at https://gitlab.ow2.org/asm/asm.
 
-Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm".
+Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm"`.
 
 For each ASM release there's a corresponding branch in this repo, e.g. [`s-5.2`](https://github.com/scala/scala-asm/commits/s-5.2) for ASM 5.2. These branches start at the corresponding ASM release tag, our customizations are commits on top.
 
