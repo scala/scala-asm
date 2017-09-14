@@ -78,7 +78,7 @@ Cherry-pick all commits that went on top of the previous branch
       - `git cherry-pick 5caad9a8..s-5.1`
 
 Rebase and clean up
-  - Make sure that all cherry-picked commits have the the `[asm-cherry-pick]` flag
+  - Make sure that all commits have the the `[asm-cherry-pick]` flag
   - Clean up the history
   - If there are changes to the build infrastructure, squash them into the "Build infrastructure" commit
 
@@ -92,11 +92,10 @@ Push the branch to your fork, check everything
 Push the branch to scala/scala-asm
   - `git remote add upstream-github git@github.com:scala/scala-asm.git` if you didn't add the remote yet
   - `git push upstream-github s-5.2`
-
-Make sure the travis build goes green: https://travis-ci.org/scala/scala-asm/builds
+  - Check the build on travis: https://travis-ci.org/scala/scala-asm/builds
 
 Create and push a tag to create a release
   - `git tag -s -m "scala-asm 5.2.0-scala-1" v5.2.0-scala-1 s-5.2`
   - `git push upstream-github --tags`
-  - Check the build log on travis: https://travis-ci.org/scala/scala-asm/builds
+  - Check the build on travis: https://travis-ci.org/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
