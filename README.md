@@ -1,5 +1,8 @@
 # A fork of ASM for the Scala Compiler
 
+[<img src="https://img.shields.io/travis/scala/scala-asm.svg"/>](https://travis-ci.org/scala/scala-asm)
+[<img src="https://img.shields.io/maven-central/v/org.scala-lang.modules/scala-asm.svg"/>](http://search.maven.org/#search%7Cga%7C1%7Cg%3Aorg.scala-lang.modules%20a%3Ascala-asm)
+
 This repository contains a fork of the ASM Java bytecode manipulation and analysis framework for the Scala compiler.
 
 ## Upgrading to a new version of ASM
