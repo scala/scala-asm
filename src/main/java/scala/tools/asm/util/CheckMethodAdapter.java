@@ -66,7 +66,7 @@ import scala.tools.asm.tree.analysis.BasicVerifier;
  * checks are enabled. These checks are enabled by using the
  * {@link #CheckMethodAdapter(int,String,String,MethodVisitor,Map)} constructor.
  * They are not performed if any other constructor is used.
- * 
+ *
  * @author Eric Bruneton
  */
 public class CheckMethodAdapter extends MethodVisitor {
@@ -373,7 +373,7 @@ public class CheckMethodAdapter extends MethodVisitor {
      * {@link #CheckMethodAdapter(int,String,String,MethodVisitor,Map)}).
      * <i>Subclasses must not use this constructor</i>. Instead, they must use
      * the {@link #CheckMethodAdapter(int, MethodVisitor, Map)} version.
-     * 
+     *
      * @param mv
      *            the method visitor to which this adapter must delegate calls.
      */
@@ -387,7 +387,7 @@ public class CheckMethodAdapter extends MethodVisitor {
      * {@link #CheckMethodAdapter(int,String,String,MethodVisitor,Map)}).
      * <i>Subclasses must not use this constructor</i>. Instead, they must use
      * the {@link #CheckMethodAdapter(int, MethodVisitor, Map)} version.
-     * 
+     *
      * @param mv
      *            the method visitor to which this adapter must delegate calls.
      * @param labels
@@ -407,7 +407,7 @@ public class CheckMethodAdapter extends MethodVisitor {
      * Constructs a new {@link CheckMethodAdapter} object. This method adapter
      * will not perform any data flow check (see
      * {@link #CheckMethodAdapter(int,String,String,MethodVisitor,Map)}).
-     * 
+     *
      * @param api
      *            the ASM API version implemented by this CheckMethodAdapter.
      *            Must be one of {@link Opcodes#ASM4} or {@link Opcodes#ASM5}.
@@ -429,7 +429,7 @@ public class CheckMethodAdapter extends MethodVisitor {
      * will perform basic data flow checks. For instance in a method whose
      * signature is <tt>void m ()</tt>, the invalid instruction IRETURN, or the
      * invalid sequence IADD L2I will be detected.
-     * 
+     *
      * @param access
      *            the method's access flags.
      * @param name
@@ -1071,7 +1071,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks a stack frame value.
-     * 
+     *
      * @param value
      *            the value to be checked.
      */
@@ -1096,7 +1096,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the type of the given opcode is equal to the given type.
-     * 
+     *
      * @param opcode
      *            the opcode to be checked.
      * @param type
@@ -1110,7 +1110,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given value is a signed byte.
-     * 
+     *
      * @param value
      *            the value to be checked.
      * @param msg
@@ -1125,7 +1125,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given value is a signed short.
-     * 
+     *
      * @param value
      *            the value to be checked.
      * @param msg
@@ -1140,7 +1140,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given value is an unsigned short.
-     * 
+     *
      * @param value
      *            the value to be checked.
      * @param msg
@@ -1156,7 +1156,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     /**
      * Checks that the given value is an {@link Integer}, a{@link Float}, a
      * {@link Long}, a {@link Double} or a {@link String}.
-     * 
+     *
      * @param cst
      *            the value to be checked.
      */
@@ -1198,7 +1198,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid unqualified name.
-     * 
+     *
      * @param version
      *            the class version.
      * @param name
@@ -1222,7 +1222,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid Java identifier.
-     * 
+     *
      * @param name
      *            the string to be checked.
      * @param msg
@@ -1234,7 +1234,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given substring is a valid Java identifier.
-     * 
+     *
      * @param name
      *            the string to be checked.
      * @param start
@@ -1267,7 +1267,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid Java identifier.
-     * 
+     *
      * @param version
      *            the class version.
      * @param name
@@ -1310,7 +1310,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid internal class name.
-     * 
+     *
      * @param name
      *            the string to be checked.
      * @param msg
@@ -1330,7 +1330,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given substring is a valid internal class name.
-     * 
+     *
      * @param name
      *            the string to be checked.
      * @param start
@@ -1367,7 +1367,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid type descriptor.
-     * 
+     *
      * @param desc
      *            the string to be checked.
      * @param canBeVoid
@@ -1382,7 +1382,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that a the given substring is a valid type descriptor.
-     * 
+     *
      * @param desc
      *            the string to be checked.
      * @param start
@@ -1446,7 +1446,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given string is a valid method descriptor.
-     * 
+     *
      * @param desc
      *            the string to be checked.
      */
@@ -1477,7 +1477,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     /**
      * Checks that the given label is not null. This method can also check that
      * the label has been visited.
-     * 
+     *
      * @param label
      *            the label to be checked.
      * @param checkVisited
@@ -1499,7 +1499,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Checks that the given label is not a label used only for debug purposes.
-     * 
+     *
      * @param label
      *            the label to be checked.
      */
@@ -1519,7 +1519,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Returns the Field object corresponding to the Label.status field.
-     * 
+     *
      * @return the Field object corresponding to the Label.status field.
      */
     private static Field getLabelStatusField() {
@@ -1534,7 +1534,7 @@ public class CheckMethodAdapter extends MethodVisitor {
 
     /**
      * Returns the field of the Label class whose name is given.
-     * 
+     *
      * @param name
      *            a field name.
      * @return the field of the Label class whose name is given, or null.

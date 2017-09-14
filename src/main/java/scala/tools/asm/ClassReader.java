@@ -37,7 +37,7 @@ import java.io.InputStream;
  * This class parses a byte array conforming to the Java class file format and
  * calls the appropriate visit methods of a given class visitor for each field,
  * method and bytecode instruction encountered.
- * 
+ *
  * @author Eric Bruneton
  * @author Eugene Kuleshov
  */
@@ -160,7 +160,7 @@ public class ClassReader {
 
     /**
      * Constructs a new {@link ClassReader} object.
-     * 
+     *
      * @param b
      *            the bytecode of the class to be read.
      */
@@ -170,7 +170,7 @@ public class ClassReader {
 
     /**
      * Constructs a new {@link ClassReader} object.
-     * 
+     *
      * @param b
      *            the bytecode of the class to be read.
      * @param off
@@ -235,9 +235,9 @@ public class ClassReader {
      * Returns the class's access flags (see {@link Opcodes}). This value may
      * not reflect Deprecated and Synthetic flags when bytecode is before 1.5
      * and those flags are represented by attributes.
-     * 
+     *
      * @return the class access flags
-     * 
+     *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
     public int getAccess() {
@@ -247,9 +247,9 @@ public class ClassReader {
     /**
      * Returns the internal name of the class (see
      * {@link Type#getInternalName() getInternalName}).
-     * 
+     *
      * @return the internal class name
-     * 
+     *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
     public String getClassName() {
@@ -260,10 +260,10 @@ public class ClassReader {
      * Returns the internal of name of the super class (see
      * {@link Type#getInternalName() getInternalName}). For interfaces, the
      * super class is {@link Object}.
-     * 
+     *
      * @return the internal name of super class, or <tt>null</tt> for
      *         {@link Object} class.
-     * 
+     *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
     public String getSuperName() {
@@ -273,10 +273,10 @@ public class ClassReader {
     /**
      * Returns the internal names of the class's interfaces (see
      * {@link Type#getInternalName() getInternalName}).
-     * 
+     *
      * @return the array of internal names for all implemented interfaces or
      *         <tt>null</tt>.
-     * 
+     *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
     public String[] getInterfaces() {
@@ -296,7 +296,7 @@ public class ClassReader {
     /**
      * Copies the constant pool data into the given {@link ClassWriter}. Should
      * be called before the {@link #accept(ClassVisitor,int)} method.
-     * 
+     *
      * @param classWriter
      *            the {@link ClassWriter} to copy constant pool into.
      */
@@ -384,7 +384,7 @@ public class ClassReader {
     /**
      * Copies the bootstrap method data into the given {@link ClassWriter}.
      * Should be called before the {@link #accept(ClassVisitor,int)} method.
-     * 
+     *
      * @param classWriter
      *            the {@link ClassWriter} to copy bootstrap methods into.
      */
@@ -429,7 +429,7 @@ public class ClassReader {
 
     /**
      * Constructs a new {@link ClassReader} object.
-     * 
+     *
      * @param is
      *            an input stream from which to read the class.
      * @throws IOException
@@ -441,7 +441,7 @@ public class ClassReader {
 
     /**
      * Constructs a new {@link ClassReader} object.
-     * 
+     *
      * @param name
      *            the binary qualified name of the class to be read.
      * @throws IOException
@@ -455,7 +455,7 @@ public class ClassReader {
 
     /**
      * Reads the bytecode of a class.
-     * 
+     *
      * @param is
      *            an input stream from which to read the class.
      * @param close
@@ -509,7 +509,7 @@ public class ClassReader {
      * Makes the given visitor visit the Java class of this {@link ClassReader}
      * . This class is the one specified in the constructor (see
      * {@link #ClassReader(byte[]) ClassReader}).
-     * 
+     *
      * @param classVisitor
      *            the visitor that must visit this class.
      * @param flags
@@ -525,7 +525,7 @@ public class ClassReader {
      * Makes the given visitor visit the Java class of this {@link ClassReader}.
      * This class is the one specified in the constructor (see
      * {@link #ClassReader(byte[]) ClassReader}).
-     * 
+     *
      * @param classVisitor
      *            the visitor that must visit this class.
      * @param attrs
@@ -714,7 +714,7 @@ public class ClassReader {
 
     /**
      * Reads a field and makes the given visitor visit it.
-     * 
+     *
      * @param classVisitor
      *            the visitor that must visit the field.
      * @param context
@@ -832,7 +832,7 @@ public class ClassReader {
 
     /**
      * Reads a method and makes the given visitor visit it.
-     * 
+     *
      * @param classVisitor
      *            the visitor that must visit the method.
      * @param context
@@ -1040,7 +1040,7 @@ public class ClassReader {
 
     /**
      * Reads the bytecode of a method and makes the given visitor visit it.
-     * 
+     *
      * @param mv
      *            the visitor that must visit the method's code.
      * @param context
@@ -1637,7 +1637,7 @@ public class ClassReader {
     /**
      * Parses a type annotation table to find the labels, and to visit the try
      * catch block annotations.
-     * 
+     *
      * @param u
      *            the start offset of a type annotation table.
      * @param mv
@@ -1720,7 +1720,7 @@ public class ClassReader {
      * start offset of the rest of the type_annotation structure (i.e. the
      * offset to the type_index field, which is followed by
      * num_element_value_pairs and then the name,value pairs).
-     * 
+     *
      * @param context
      *            information about the class being parsed. This is where the
      *            extracted target_type and target_path must be stored.
@@ -1791,7 +1791,7 @@ public class ClassReader {
 
     /**
      * Reads parameter annotations and makes the given visitor visit them.
-     * 
+     *
      * @param mv
      *            the visitor that must visit the annotations.
      * @param context
@@ -1834,7 +1834,7 @@ public class ClassReader {
 
     /**
      * Reads the values of an annotation and makes the given visitor visit them.
-     * 
+     *
      * @param v
      *            the start offset in {@link #b b} of the values to be read
      *            (including the unsigned short that gives the number of
@@ -1870,7 +1870,7 @@ public class ClassReader {
 
     /**
      * Reads a value of an annotation and makes the given visitor visit it.
-     * 
+     *
      * @param v
      *            the start offset in {@link #b b} of the value to be read
      *            (<i>not including the value name constant pool index</i>).
@@ -2033,7 +2033,7 @@ public class ClassReader {
     /**
      * Computes the implicit frame of the method currently being parsed (as
      * defined in the given {@link Context}) and stores it in the given context.
-     * 
+     *
      * @param frame
      *            information about the class being parsed.
      */
@@ -2096,7 +2096,7 @@ public class ClassReader {
     /**
      * Reads a stack map frame and stores the result in the given
      * {@link Context} object.
-     * 
+     *
      * @param stackMap
      *            the start offset of a stack map frame in the class file.
      * @param zip
@@ -2182,7 +2182,7 @@ public class ClassReader {
     /**
      * Reads a stack map frame type and stores it at the given index in the
      * given array.
-     * 
+     *
      * @param frame
      *            the array where the parsed type must be stored.
      * @param index
@@ -2238,7 +2238,7 @@ public class ClassReader {
      * Returns the label corresponding to the given offset. The default
      * implementation of this method creates a label for the given offset if it
      * has not been already created.
-     * 
+     *
      * @param offset
      *            a bytecode offset in a method.
      * @param labels
@@ -2256,7 +2256,7 @@ public class ClassReader {
 
     /**
      * Returns the start index of the attribute_info structure of this class.
-     * 
+     *
      * @return the start index of the attribute_info structure of this class.
      */
     private int getAttributes() {
@@ -2282,7 +2282,7 @@ public class ClassReader {
 
     /**
      * Reads an attribute in {@link #b b}.
-     * 
+     *
      * @param attrs
      *            prototypes of the attributes that must be parsed during the
      *            visit of the class. Any attribute whose type is not equal to
@@ -2330,7 +2330,7 @@ public class ClassReader {
 
     /**
      * Returns the number of constant pool items in {@link #b b}.
-     * 
+     *
      * @return the number of constant pool items in {@link #b b}.
      */
     public int getItemCount() {
@@ -2341,7 +2341,7 @@ public class ClassReader {
      * Returns the start index of the constant pool item in {@link #b b}, plus
      * one. <i>This method is intended for {@link Attribute} sub classes, and is
      * normally not needed by class generators or adapters.</i>
-     * 
+     *
      * @param item
      *            the index a constant pool item.
      * @return the start index of the constant pool item in {@link #b b}, plus
@@ -2354,7 +2354,7 @@ public class ClassReader {
     /**
      * Returns the maximum length of the strings contained in the constant pool
      * of the class.
-     * 
+     *
      * @return the maximum length of the strings contained in the constant pool
      *         of the class.
      */
@@ -2366,7 +2366,7 @@ public class ClassReader {
      * Reads a byte value in {@link #b b}. <i>This method is intended for
      * {@link Attribute} sub classes, and is normally not needed by class
      * generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2379,7 +2379,7 @@ public class ClassReader {
      * Reads an unsigned short value in {@link #b b}. <i>This method is intended
      * for {@link Attribute} sub classes, and is normally not needed by class
      * generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2393,7 +2393,7 @@ public class ClassReader {
      * Reads a signed short value in {@link #b b}. <i>This method is intended
      * for {@link Attribute} sub classes, and is normally not needed by class
      * generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2407,7 +2407,7 @@ public class ClassReader {
      * Reads a signed int value in {@link #b b}. <i>This method is intended for
      * {@link Attribute} sub classes, and is normally not needed by class
      * generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2422,7 +2422,7 @@ public class ClassReader {
      * Reads a signed long value in {@link #b b}. <i>This method is intended for
      * {@link Attribute} sub classes, and is normally not needed by class
      * generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2437,7 +2437,7 @@ public class ClassReader {
      * Reads an UTF8 string constant pool item in {@link #b b}. <i>This method
      * is intended for {@link Attribute} sub classes, and is normally not needed
      * by class generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of an unsigned short value in {@link #b b},
      *            whose value is the index of an UTF8 constant pool item.
@@ -2461,7 +2461,7 @@ public class ClassReader {
 
     /**
      * Reads UTF8 string in {@link #b b}.
-     * 
+     *
      * @param index
      *            start offset of the UTF8 string to be read.
      * @param utfLen
@@ -2512,7 +2512,7 @@ public class ClassReader {
      * Reads a class constant pool item in {@link #b b}. <i>This method is
      * intended for {@link Attribute} sub classes, and is normally not needed by
      * class generators or adapters.</i>
-     * 
+     *
      * @param index
      *            the start index of an unsigned short value in {@link #b b},
      *            whose value is the index of a class constant pool item.
@@ -2532,7 +2532,7 @@ public class ClassReader {
      * Reads a numeric or string constant pool item in {@link #b b}. <i>This
      * method is intended for {@link Attribute} sub classes, and is normally not
      * needed by class generators or adapters.</i>
-     * 
+     *
      * @param item
      *            the index of a constant pool item.
      * @param buf

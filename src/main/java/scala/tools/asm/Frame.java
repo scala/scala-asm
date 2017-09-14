@@ -31,7 +31,7 @@ package scala.tools.asm;
 
 /**
  * Information about the input and output stack map frames of a basic block.
- * 
+ *
  * @author Eric Bruneton
  */
 class Frame {
@@ -46,14 +46,14 @@ class Frame {
      * of the first basic block (which is computed from the method descriptor),
      * and by using the previously computed output frames to compute the input
      * state of the other blocks.
-     * 
+     *
      * All output and input frames are stored as arrays of integers. Reference
      * and array types are represented by an index into a type table (which is
      * not the same as the constant pool of the class, in order to avoid adding
      * unnecessary constants in the pool - not all computed frames will end up
      * being stored in the stack map table). This allows very fast type
      * comparisons.
-     * 
+     *
      * Output stack map frames are computed relatively to the input frame of the
      * basic block, which is not yet known when output frames are computed. It
      * is therefore necessary to be able to represent abstract types such as
@@ -61,7 +61,7 @@ class Frame {
      * position x from the top of the input frame stack" or even "the type at
      * position x in the input frame, with y more (or less) array dimensions".
      * This explains the rather complicated type format used in output frames.
-     * 
+     *
      * This format is the following: DIM KIND VALUE (4, 4 and 24 bits). DIM is a
      * signed number of array dimensions (from -8 to 7). KIND is either BASE,
      * LOCAL or STACK. BASE is used for types that are not relative to the input
@@ -72,14 +72,14 @@ class Frame {
      * relatively to the top of input frame stack. For BASE types, it is either
      * one of the constants defined below, or for OBJECT and UNINITIALIZED
      * types, a tag and an index in the type table.
-     * 
+     *
      * Output frames can contain types of any kind and with a positive or
      * negative dimension (and even unassigned types, represented by 0 - which
      * does not correspond to any valid type value). Input frames can only
      * contain BASE types of positive or null dimension. In all cases the type
      * table contains only internal type names (array type descriptors are
      * forbidden - dimensions must be represented through the DIM field).
-     * 
+     *
      * The LONG and DOUBLE types are always represented by using two slots (LONG
      * + TOP or DOUBLE + TOP), for local variable types as well as in the
      * operand stack. This is necessary to be able to simulate DUPx_y
@@ -107,7 +107,7 @@ class Frame {
 
     /**
      * Mask to get the kind of a frame type.
-     * 
+     *
      * @see #BASE
      * @see #LOCAL
      * @see #STACK
@@ -489,10 +489,10 @@ class Frame {
     /**
      * Relative size of the output stack. The exact semantics of this field
      * depends on the algorithm that is used.
-     * 
+     *
      * When only the maximum stack size is computed, this field is the size of
      * the output stack relatively to the top of the input stack.
-     * 
+     *
      * When the stack map frames are completely computed, this field is the
      * actual number of types in {@link #outputStack}.
      */
@@ -500,7 +500,7 @@ class Frame {
 
     /**
      * Number of types that are initialized in the basic block.
-     * 
+     *
      * @see #initializations
      */
     private int initializationCount;
@@ -522,7 +522,7 @@ class Frame {
 
     /**
      * Sets this frame to the given value.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param nLocal
@@ -564,7 +564,7 @@ class Frame {
     /**
      * Converts types from the MethodWriter.visitFrame() format to the Frame
      * format.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param nInput
@@ -610,7 +610,7 @@ class Frame {
      * method is called the two frames share the same data structures. It is
      * recommended to discard the given frame f to avoid unexpected side
      * effects.
-     * 
+     *
      * @param f
      *            The new frame value.
      */
@@ -626,7 +626,7 @@ class Frame {
 
     /**
      * Returns the output frame local variable type at the given index.
-     * 
+     *
      * @param local
      *            the index of the local that must be returned.
      * @return the output frame local variable type at the given index.
@@ -649,7 +649,7 @@ class Frame {
 
     /**
      * Sets the output frame local variable type at the given index.
-     * 
+     *
      * @param local
      *            the index of the local that must be set.
      * @param type
@@ -672,7 +672,7 @@ class Frame {
 
     /**
      * Pushes a new type onto the output frame stack.
-     * 
+     *
      * @param type
      *            the type that must be pushed.
      */
@@ -698,7 +698,7 @@ class Frame {
 
     /**
      * Pushes a new type onto the output frame stack.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param desc
@@ -718,7 +718,7 @@ class Frame {
 
     /**
      * Returns the int encoding of the given type.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param desc
@@ -792,7 +792,7 @@ class Frame {
 
     /**
      * Pops a type from the output frame stack and returns its value.
-     * 
+     *
      * @return the type that has been popped from the output frame stack.
      */
     private int pop() {
@@ -806,7 +806,7 @@ class Frame {
 
     /**
      * Pops the given number of types from the output frame stack.
-     * 
+     *
      * @param elements
      *            the number of types that must be popped.
      */
@@ -824,7 +824,7 @@ class Frame {
 
     /**
      * Pops a type from the output frame stack.
-     * 
+     *
      * @param desc
      *            the descriptor of the type to be popped. Can also be a method
      *            descriptor (in this case this method pops the types
@@ -844,7 +844,7 @@ class Frame {
     /**
      * Adds a new type to the list of types on which a constructor is invoked in
      * the basic block.
-     * 
+     *
      * @param var
      *            a type on a which a constructor is invoked.
      */
@@ -866,7 +866,7 @@ class Frame {
     /**
      * Replaces the given type with the appropriate type if it is one of the
      * types on which a constructor is invoked in the basic block.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param t
@@ -903,7 +903,7 @@ class Frame {
     /**
      * Initializes the input frame of the first basic block from the method
      * descriptor.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param access
@@ -939,7 +939,7 @@ class Frame {
 
     /**
      * Simulates the action of the given instruction on the output stack frame.
-     * 
+     *
      * @param opcode
      *            the opcode of the instruction.
      * @param arg
@@ -1376,7 +1376,7 @@ class Frame {
      * Merges the input frame of the given basic block with the input and output
      * frames of this basic block. Returns <tt>true</tt> if the input frame of
      * the given label has been changed by this operation.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param frame
@@ -1484,7 +1484,7 @@ class Frame {
      * Merges the type at the given index in the given type array with the given
      * type. Returns <tt>true</tt> if the type array has been modified by this
      * operation.
-     * 
+     *
      * @param cw
      *            the ClassWriter to which this label belongs.
      * @param t
