@@ -1,0 +1,10 @@
+/*
+!/.git/
+!/scripts/
+!/LICENSE.txt
+!/src/
+/src/**/package.html
+/src/org/objectweb/asm/commons/*
+!/src/org/objectweb/asm/commons/CodeSizeEvaluator.java
+/src/org/objectweb/asm/optimizer/
+/src/org/objectweb/asm/xml/
