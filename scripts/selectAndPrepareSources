@@ -1,0 +1,65 @@
+#!/usr/bin/env bash
+
+# http://redsymbol.net/articles/unofficial-bash-strict-mode/
+set -euo pipefail
+IFS=$'\n\t'
+
+# http://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+scriptsDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd $scriptsDir/..
+
+
+### Remove unused files
+
+cp scripts/gitignoreSelectFiles .gitignore
+
+# https://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository
+git rm -r --cached .
+git add .
+git commit -m "Remove unused files"
+git clean -dfx
+
+
+### Convert all line endings to unix
+
+find src -name '*.java' | xargs dos2unix
+git add src
+git commit --allow-empty -m "Convert all line endings to unix"
+
+
+### Move sources to src/main/java/scala/tools/asm
+
+mkdir -p src/main/java/scala/tools/asm
+git mv src/org/objectweb/asm/*  src/main/java/scala/tools/asm
+rm -r src/org
+git commit -m "Move sources to src/main/java/scala/tools/asm"
+
+
+### Change package clauses
+
+find src -name '*.java' | xargs sed -i '' -e 's/package org\.objectweb\.asm/package scala.tools.asm/'
+git add src
+git commit -m "Update package clauses"
+
+
+### Update imports
+
+find src -name '*.java' | xargs sed -i '' -e 's/import org\.objectweb\.asm/import scala.tools.asm/'
+git add src
+git commit -m "Update imports"
+
+
+### Update @links, @associates
+
+find src -name '*.java' | xargs sed -i '' -e 's/@link org\.objectweb\.asm/@link scala.tools.asm/'
+find src -name '*.java' | xargs sed -i '' -e 's/@associates org\.objectweb\.asm/@associates scala.tools.asm/'
+git add src
+git commit -m 'Update `@links`, `@associates`'
+
+
+### Remove trailing whitespace
+
+find src -name '*.java' | xargs sed -i '' -e 's/[ ]*$//'
+git add src
+git commit -m "Remove trailing whitespace"
