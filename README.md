@@ -5,6 +5,23 @@
 
 This repository contains a fork of the ASM Java bytecode manipulation and analysis framework for the Scala compiler.
 
+
+## Structure
+
+This is a fork (a git clone) of the offical asm repository at https://gitlab.ow2.org/asm/asm.
+
+Tags of the shape `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm".
+
+For each ASM release there's a corresponding branch in this repo, e.g. [`s-5.2`](https://github.com/scala/scala-asm/commits/s-5.2) for ASM 5.2. These branches start at the corresponding ASM release tag, our customizations are commits on top.
+
+The following changes are applied:
+  - The package name is changed to `scala.tools.asm`
+  - Unused files are removed, including certain source files (e.g., package `org.objectweb.asm.xml`)
+  - Customizations are applied in commits marked `[asm-cherry-pick]`
+
+We start a new branch for each ASM release and re-apply our changes in order to keep track what we changed. Besides, it would be non-trivial to merge in changes from upstream, as we deleted many files and moved all sources to a different directory.
+
+
 ## Upgrading to a new version of ASM
 
 If you haven't done so, add the upstream repostiory (https://gitlab.ow2.org/asm/asm) as a remote
@@ -12,6 +29,9 @@ If you haven't done so, add the upstream repostiory (https://gitlab.ow2.org/asm/
 
 Pull changes / tags from upstream
   - `git fetch upstream-asm --tags`
+
+Review the upstream changes to see if there's anything that requires attention, updates to scripts in this repo, or similar
+  - https://github.com/scala/scala-asm/compare/ASM_5_1...ASM_5_2
 
 Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
   - `git checkout -b s-5.2 ASM_5_2`
