@@ -63,7 +63,7 @@ public class InsnList {
 
     /**
      * Returns the number of instructions in this list.
-     * 
+     *
      * @return the number of instructions in this list.
      */
     public int size() {
@@ -72,7 +72,7 @@ public class InsnList {
 
     /**
      * Returns the first instruction in this list.
-     * 
+     *
      * @return the first instruction in this list, or <tt>null</tt> if the list
      *         is empty.
      */
@@ -82,7 +82,7 @@ public class InsnList {
 
     /**
      * Returns the last instruction in this list.
-     * 
+     *
      * @return the last instruction in this list, or <tt>null</tt> if the list
      *         is empty.
      */
@@ -95,7 +95,7 @@ public class InsnList {
      * of the instructions in this list to avoid scanning the whole list each
      * time it is called. Once the cache is built, this method run in constant
      * time. This cache is invalidated by all the methods that modify the list.
-     * 
+     *
      * @param index
      *            the index of the instruction that must be returned.
      * @return the instruction whose index is given.
@@ -116,7 +116,7 @@ public class InsnList {
      * Returns <tt>true</tt> if the given instruction belongs to this list. This
      * method always scans the instructions of this list until it finds the
      * given instruction or reaches the end of the list.
-     * 
+     *
      * @param insn
      *            an instruction.
      * @return <tt>true</tt> if the given instruction belongs to this list.
@@ -135,7 +135,7 @@ public class InsnList {
      * list each time it is called. Once the cache is built, this method run in
      * constant time. The cache is invalidated by all the methods that modify
      * the list.
-     * 
+     *
      * @param insn
      *            an instruction <i>of this list</i>.
      * @return the index of the given instruction in this list. <i>The result of
@@ -152,7 +152,7 @@ public class InsnList {
 
     /**
      * Makes the given visitor visit all of the instructions in this list.
-     * 
+     *
      * @param mv
      *            the method visitor that must visit the instructions.
      */
@@ -166,7 +166,7 @@ public class InsnList {
 
     /**
      * Returns an iterator over the instructions in this list.
-     * 
+     *
      * @return an iterator over the instructions in this list.
      */
     public ListIterator<AbstractInsnNode> iterator() {
@@ -175,10 +175,10 @@ public class InsnList {
 
     /**
      * Returns an iterator over the instructions in this list.
-     * 
+     *
      * @param index
      *            index of instruction for the iterator to start at
-     * 
+     *
      * @return an iterator over the instructions in this list.
      */
     @SuppressWarnings("unchecked")
@@ -188,7 +188,7 @@ public class InsnList {
 
     /**
      * Returns an array containing all of the instructions in this list.
-     * 
+     *
      * @return an array containing all of the instructions in this list.
      */
     public AbstractInsnNode[] toArray() {
@@ -205,7 +205,7 @@ public class InsnList {
 
     /**
      * Replaces an instruction of this list with another instruction.
-     * 
+     *
      * @param location
      *            an instruction <i>of this list</i>.
      * @param insn
@@ -241,7 +241,7 @@ public class InsnList {
 
     /**
      * Adds the given instruction to the end of this list.
-     * 
+     *
      * @param insn
      *            an instruction, <i>which must not belong to any
      *            {@link InsnList}</i>.
@@ -262,7 +262,7 @@ public class InsnList {
 
     /**
      * Adds the given instructions to the end of this list.
-     * 
+     *
      * @param insns
      *            an instruction list, which is cleared during the process. This
      *            list must be different from 'this'.
@@ -287,7 +287,7 @@ public class InsnList {
 
     /**
      * Inserts the given instruction at the begining of this list.
-     * 
+     *
      * @param insn
      *            an instruction, <i>which must not belong to any
      *            {@link InsnList}</i>.
@@ -308,7 +308,7 @@ public class InsnList {
 
     /**
      * Inserts the given instructions at the begining of this list.
-     * 
+     *
      * @param insns
      *            an instruction list, which is cleared during the process. This
      *            list must be different from 'this'.
@@ -333,7 +333,7 @@ public class InsnList {
 
     /**
      * Inserts the given instruction after the specified instruction.
-     * 
+     *
      * @param location
      *            an instruction <i>of this list</i> after which insn must be
      *            inserted.
@@ -359,7 +359,7 @@ public class InsnList {
 
     /**
      * Inserts the given instructions after the specified instruction.
-     * 
+     *
      * @param location
      *            an instruction <i>of this list</i> after which the
      *            instructions must be inserted.
@@ -389,7 +389,7 @@ public class InsnList {
 
     /**
      * Inserts the given instruction before the specified instruction.
-     * 
+     *
      * @param location
      *            an instruction <i>of this list</i> before which insn must be
      *            inserted.
@@ -415,7 +415,7 @@ public class InsnList {
 
     /**
      * Inserts the given instructions before the specified instruction.
-     * 
+     *
      * @param location
      *            an instruction <i>of this list</i> before which the
      *            instructions must be inserted.
@@ -446,7 +446,7 @@ public class InsnList {
 
     /**
      * Removes the given instruction from this list.
-     * 
+     *
      * @param insn
      *            the instruction <i>of this list</i> that must be removed.
      */
@@ -479,7 +479,7 @@ public class InsnList {
 
     /**
      * Removes all of the instructions of this list.
-     * 
+     *
      * @param mark
      *            if the instructions must be marked as no longer belonging to
      *            any {@link InsnList}.
@@ -622,7 +622,7 @@ public class InsnList {
                 if (remove == prev) {
                     prev = (AbstractInsnNode) o;
                 } else {
-                    next = (AbstractInsnNode) o;                    
+                    next = (AbstractInsnNode) o;
                 }
             } else {
                 throw new IllegalStateException();

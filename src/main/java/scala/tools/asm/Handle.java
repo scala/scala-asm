@@ -32,7 +32,7 @@ package scala.tools.asm;
 
 /**
  * A reference to a field or a method.
- * 
+ *
  * @author Remi Forax
  * @author Eric Bruneton
  */
@@ -63,8 +63,8 @@ public final class Handle {
      * The descriptor of the field or method designated by this handle.
      */
     final String desc;
-    
-    
+
+
     /**
      * Indicate if the owner is an interface or not.
      */
@@ -72,7 +72,7 @@ public final class Handle {
 
     /**
      * Constructs a new field or method handle.
-     * 
+     *
      * @param tag
      *            the kind of field or method designated by this Handle. Must be
      *            {@link Opcodes#H_GETFIELD}, {@link Opcodes#H_GETSTATIC},
@@ -90,7 +90,7 @@ public final class Handle {
      * @param desc
      *            the descriptor of the field or method designated by this
      *            handle.
-     *            
+     *
      * @deprecated this constructor has been superseded
      *             by {@link #Handle(int, String, String, String, boolean)}.
      */
@@ -101,7 +101,7 @@ public final class Handle {
 
     /**
      * Constructs a new field or method handle.
-     * 
+     *
      * @param tag
      *            the kind of field or method designated by this Handle. Must be
      *            {@link Opcodes#H_GETFIELD}, {@link Opcodes#H_GETSTATIC},
@@ -129,10 +129,10 @@ public final class Handle {
         this.desc = desc;
         this.itf = itf;
     }
-    
+
     /**
      * Returns the kind of field or method designated by this handle.
-     * 
+     *
      * @return {@link Opcodes#H_GETFIELD}, {@link Opcodes#H_GETSTATIC},
      *         {@link Opcodes#H_PUTFIELD}, {@link Opcodes#H_PUTSTATIC},
      *         {@link Opcodes#H_INVOKEVIRTUAL}, {@link Opcodes#H_INVOKESTATIC},
@@ -147,7 +147,7 @@ public final class Handle {
     /**
      * Returns the internal name of the class that owns the field or method
      * designated by this handle.
-     * 
+     *
      * @return the internal name of the class that owns the field or method
      *         designated by this handle.
      */
@@ -157,7 +157,7 @@ public final class Handle {
 
     /**
      * Returns the name of the field or method designated by this handle.
-     * 
+     *
      * @return the name of the field or method designated by this handle.
      */
     public String getName() {
@@ -166,17 +166,17 @@ public final class Handle {
 
     /**
      * Returns the descriptor of the field or method designated by this handle.
-     * 
+     *
      * @return the descriptor of the field or method designated by this handle.
      */
     public String getDesc() {
         return desc;
     }
-    
+
     /**
      * Returns true if the owner of the field or method designated
      * by this handle is an interface.
-     * 
+     *
      * @return true if the owner of the field or method designated
      *         by this handle is an interface.
      */
@@ -205,14 +205,14 @@ public final class Handle {
     /**
      * Returns the textual representation of this handle. The textual
      * representation is:
-     * 
+     *
      * <pre>
      * for a reference to a class:
      * owner '.' name desc ' ' '(' tag ')'
      * for a reference to an interface:
      * owner '.' name desc ' ' '(' tag ' ' itf ')'
      * </pre>
-     * 
+     *
      * . As this format is unambiguous, it can be parsed if necessary.
      */
     @Override
