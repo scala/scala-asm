@@ -71,11 +71,11 @@ Cherry-pick all commits that went on top of the previous branch
       * 679bfd52 [asm-cherry-pick] Script for deleting unused files and preparing sources
       * 3d2e7dc4 (tag: ASM_5_1) Fixed bug #317606.
       ```
-  - Pick the commit range that's not been included yet (`5caad9a8..s-5.1` - note that the a range `A..B` includes `B` but not `A`)
-  - Check your commit range
-    - `git log --oneline 5caad9a8..s-5.1`
-  - Cherry-pick the commits
-    - `git cherry-pick 5caad9a8..s-5.1`
+  - Cherry-pick the commits that are not yet included (`5caad9a8..s-5.1` - note that the a range `A..B` includes `B` but not `A`)
+    - Check your commit range
+      - `git log --oneline 5caad9a8..s-5.1`
+    - Cherry-pick the commits
+      - `git cherry-pick 5caad9a8..s-5.1`
 
 Rebase and clean up
   - Make sure that all cherry-picked commits have the the `[asm-cherry-pick]` flag
