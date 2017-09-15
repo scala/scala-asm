@@ -1812,7 +1812,7 @@ public class ClassReader {
         // equal to the number of parameters in the method descriptor - which
         // includes the synthetic parameters added by the compiler). This work-
         // around supposes that the synthetic parameters are the first ones.
-        int synthetics = Type.getArgumentTypes(context.desc).length - n;
+        int synthetics = Type.getArgumentCount(context.desc) - n;
         AnnotationVisitor av;
         for (i = 0; i < synthetics; ++i) {
             // virtual annotation to detect synthetic parameters in MethodWriter

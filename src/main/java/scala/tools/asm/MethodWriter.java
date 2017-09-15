@@ -589,13 +589,13 @@ public class MethodWriter extends MethodVisitor {
         AnnotationWriter aw = new AnnotationWriter(cw, true, bv, bv, 2);
         if (visible) {
             if (panns == null) {
-                panns = new AnnotationWriter[Type.getArgumentTypes(descriptor).length];
+                panns = new AnnotationWriter[Type.getArgumentCount(descriptor)];
             }
             aw.next = panns[parameter];
             panns[parameter] = aw;
         } else {
             if (ipanns == null) {
-                ipanns = new AnnotationWriter[Type.getArgumentTypes(descriptor).length];
+                ipanns = new AnnotationWriter[Type.getArgumentCount(descriptor)];
             }
             aw.next = ipanns[parameter];
             ipanns[parameter] = aw;
