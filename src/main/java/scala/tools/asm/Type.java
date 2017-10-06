@@ -348,6 +348,25 @@ public class Type {
         return args;
     }
 
+    public static int getArgumentCount(final String methodDescriptor) {
+        char[] buf = methodDescriptor.toCharArray();
+        int off = 1;
+        int size = 0;
+        while (true) {
+            char car = methodDescriptor.charAt(off++);
+            if (car == ')') {
+                break;
+            } else if (car == 'L') {
+                while (buf[off++] != ';') {
+                }
+                ++size;
+            } else if (car != '[') {
+                ++size;
+            }
+        }
+        return size;
+    }
+
     /**
      * Returns the Java types corresponding to the argument types of the given
      * method.
@@ -377,16 +396,11 @@ public class Type {
      */
     public static Type getReturnType(final String methodDescriptor) {
         char[] buf = methodDescriptor.toCharArray();
-        int off = 1;
-        while (true) {
-            char car = buf[off++];
-            if (car == ')') {
-                return getType(buf, off);
-            } else if (car == 'L') {
-                while (buf[off++] != ';') {
-                }
-            }
-        }
+        return getType(buf, methodDescriptor.lastIndexOf(')') + 1);
+    }
+
+    public static boolean hasVoidReturnType(final String methodDescriptor) {
+        return methodDescriptor.charAt(methodDescriptor.lastIndexOf(')') + 1) == 'V';
     }
 
     /**

@@ -622,13 +622,13 @@ public class Frame<V extends Value> {
         case Opcodes.INVOKEINTERFACE: {
             values = new ArrayList<V>();
             String desc = ((MethodInsnNode) insn).desc;
-            for (int i = Type.getArgumentTypes(desc).length; i > 0; --i) {
+            for (int i = Type.getArgumentCount(desc); i > 0; --i) {
                 values.add(0, pop());
             }
             if (insn.getOpcode() != Opcodes.INVOKESTATIC) {
                 values.add(0, pop());
             }
-            if (Type.getReturnType(desc) == Type.VOID_TYPE) {
+            if (Type.hasVoidReturnType(desc)) {
                 interpreter.naryOperation(insn, values);
             } else {
                 push(interpreter.naryOperation(insn, values));
@@ -638,10 +638,10 @@ public class Frame<V extends Value> {
         case Opcodes.INVOKEDYNAMIC: {
             values = new ArrayList<V>();
             String desc = ((InvokeDynamicInsnNode) insn).desc;
-            for (int i = Type.getArgumentTypes(desc).length; i > 0; --i) {
+            for (int i = Type.getArgumentCount(desc); i > 0; --i) {
                 values.add(0, pop());
             }
-            if (Type.getReturnType(desc) == Type.VOID_TYPE) {
+            if (Type.hasVoidReturnType(desc)) {
                 interpreter.naryOperation(insn, values);
             } else {
                 push(interpreter.naryOperation(insn, values));
