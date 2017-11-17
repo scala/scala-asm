@@ -29,7 +29,7 @@
  */
 package scala.tools.asm.tree;
 
-import org.objectweb.asm.ModuleVisitor;
+import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents a required module with its name and access of a module descriptor.

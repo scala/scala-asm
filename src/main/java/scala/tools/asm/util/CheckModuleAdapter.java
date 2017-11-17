@@ -31,8 +31,8 @@ package scala.tools.asm.util;
 
 import java.util.HashSet;
 
-import org.objectweb.asm.ModuleVisitor;
-import org.objectweb.asm.Opcodes;
+import scala.tools.asm.ModuleVisitor;
+import scala.tools.asm.Opcodes;
 
 /**
  * @author Remi Forax
