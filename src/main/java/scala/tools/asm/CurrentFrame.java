@@ -28,7 +28,7 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package org.objectweb.asm;
+package scala.tools.asm;
 
 /**
  * Information about the input stack map frame at the "current" instruction of a
