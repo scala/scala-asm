@@ -44,7 +44,7 @@ import scala.tools.asm.TypePath;
 
 /**
  * A {@link Printer} that prints the ASM code to generate the classes if visits.
- * 
+ *
  * @author Eric Bruneton
  */
 public class ASMifier extends Printer {
@@ -79,7 +79,7 @@ public class ASMifier extends Printer {
      * Pseudo access flag used to distinguish inner class flags.
      */
     private static final int ACCESS_INNER = 1048576;
-    
+
     /**
      * Pseudo access flag used to distinguish module requires/exports flags.
      */
@@ -89,7 +89,7 @@ public class ASMifier extends Printer {
      * Constructs a new {@link ASMifier}. <i>Subclasses must not use this
      * constructor</i>. Instead, they must use the
      * {@link #ASMifier(int, String, int)} version.
-     * 
+     *
      * @throws IllegalStateException
      *             If a subclass calls this constructor.
      */
@@ -102,7 +102,7 @@ public class ASMifier extends Printer {
 
     /**
      * Constructs a new {@link ASMifier}.
-     * 
+     *
      * @param api
      *            the ASM API version implemented by this class. Must be one of
      *            {@link Opcodes#ASM4}, {@link Opcodes#ASM5} or {@link Opcodes#ASM6}.
@@ -123,10 +123,10 @@ public class ASMifier extends Printer {
      * output.
      * <p>
      * Usage: ASMifier [-debug] &lt;binary class name or class file name&gt;
-     * 
+     *
      * @param args
      *            the command line arguments.
-     * 
+     *
      * @throws Exception
      *             if the class cannot be found, or if an IO exception occurs.
      */
@@ -260,7 +260,7 @@ public class ASMifier extends Printer {
         buf.append(");\n\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public Printer visitModule(final String name, final int flags,
             final String version) {
@@ -392,7 +392,7 @@ public class ASMifier extends Printer {
     // ------------------------------------------------------------------------
     // Module
     // ------------------------------------------------------------------------
-    
+
     @Override
     public void visitMainClass(String mainClass) {
         buf.setLength(0);
@@ -401,7 +401,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitPackage(String packaze) {
         buf.setLength(0);
@@ -410,7 +410,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitRequire(String module, int access, String version) {
         buf.setLength(0);
@@ -423,7 +423,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitExport(String packaze, int access, String... modules) {
         buf.setLength(0);
@@ -442,7 +442,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitOpen(String packaze, int access, String... modules) {
         buf.setLength(0);
@@ -461,7 +461,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitUse(String service) {
         buf.setLength(0);
@@ -470,7 +470,7 @@ public class ASMifier extends Printer {
         buf.append(");\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitProvide(String service, String... providers) {
         buf.setLength(0);
@@ -484,13 +484,13 @@ public class ASMifier extends Printer {
         buf.append(" });\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitModuleEnd() {
         text.add("mdv.visitEnd();\n");
     }
-    
-    
+
+
     // ------------------------------------------------------------------------
     // Annotations
     // ------------------------------------------------------------------------
@@ -1084,7 +1084,7 @@ public class ASMifier extends Printer {
     /**
      * Appends a string representation of the given access modifiers to
      * {@link #buf buf}.
-     * 
+     *
      * @param access
      *            some access modifiers.
      */
@@ -1144,11 +1144,11 @@ public class ASMifier extends Printer {
                     buf.append("ACC_BRIDGE");
                 } else {
                     buf.append("ACC_STATIC_PHASE");
-                } 
+                }
             } else {
-                buf.append("ACC_VOLATILE"); 
+                buf.append("ACC_VOLATILE");
             }
-            
+
             first = false;
         }
         if ((access & Opcodes.ACC_VARARGS) != 0 && (access & ACCESS_CLASS) == 0
@@ -1232,7 +1232,7 @@ public class ASMifier extends Printer {
                 buf.append(" + ");
             }
             if ((access & ACCESS_CLASS) == 0) {
-                buf.append("ACC_MANDATED");   
+                buf.append("ACC_MANDATED");
             } else {
                 buf.append("ACC_MODULE");
             }
@@ -1246,7 +1246,7 @@ public class ASMifier extends Printer {
     /**
      * Appends a string representation of the given constant to the given
      * buffer.
-     * 
+     *
      * @param cst
      *            an {@link Integer}, {@link Float}, {@link Long},
      *            {@link Double} or {@link String} object. May be <tt>null</tt>.
@@ -1258,7 +1258,7 @@ public class ASMifier extends Printer {
     /**
      * Appends a string representation of the given constant to the given
      * buffer.
-     * 
+     *
      * @param buf
      *            a string buffer.
      * @param cst
@@ -1410,7 +1410,7 @@ public class ASMifier extends Printer {
      * Appends a declaration of the given label to {@link #buf buf}. This
      * declaration is of the form "Label lXXX = new Label();". Does nothing if
      * the given label has already been declared.
-     * 
+     *
      * @param l
      *            a label.
      */
@@ -1430,7 +1430,7 @@ public class ASMifier extends Printer {
      * Appends the name of the given label to {@link #buf buf}. The given label
      * <i>must</i> already have a name. One way to ensure this is to always call
      * {@link #declareLabel declared} before calling this method.
-     * 
+     *
      * @param l
      *            a label.
      */

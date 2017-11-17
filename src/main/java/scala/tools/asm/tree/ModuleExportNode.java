@@ -35,7 +35,7 @@ import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents an exported package with its name and the module that can access to it.
- * 
+ *
  * @author Remi Forax
  */
 public class ModuleExportNode {
@@ -43,7 +43,7 @@ public class ModuleExportNode {
      * The package name.
      */
     public String packaze;
-    
+
     /**
      * The access flags (see {@link scala.tools.asm.Opcodes}).
      * Valid values are {@code ACC_SYNTHETIC} and {@code ACC_MANDATED}.
@@ -58,7 +58,7 @@ public class ModuleExportNode {
 
     /**
      * Constructs a new {@link ModuleExportNode}.
-     * 
+     *
      * @param packaze
      *            the parameter's name.
      * @param modules
@@ -72,7 +72,7 @@ public class ModuleExportNode {
 
     /**
      * Makes the given module visitor visit this export declaration.
-     * 
+     *
      * @param mv
      *            a module visitor.
      */

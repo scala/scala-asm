@@ -41,7 +41,7 @@ import scala.tools.asm.TypePath;
 
 /**
  * An abstract converter from visit events to text.
- * 
+ *
  * @author Eric Bruneton
  */
 public abstract class Printer {
@@ -197,12 +197,12 @@ public abstract class Printer {
      */
     public abstract void visitSource(final String source, final String debug);
 
-    
+
     /**
      * Module.
      * See {@link scala.tools.asm.ClassVisitor#visitModule(String, int)}.
-     * 
-     * @param name 
+     *
+     * @param name
      *            module name.
      * @param access
      *            module flags, among {@code ACC_OPEN}, {@code ACC_SYNTHETIC}
@@ -214,7 +214,7 @@ public abstract class Printer {
     public Printer visitModule(String name, int access, String version) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     /**
      * Class outer class.
      * See {@link scala.tools.asm.ClassVisitor#visitOuterClass}.
@@ -367,7 +367,7 @@ public abstract class Printer {
     // ------------------------------------------------------------------------
     // Module
     // ------------------------------------------------------------------------
-    
+
     public void visitMainClass(String mainClass) {
         throw new RuntimeException("Must be overriden");
     }
@@ -375,34 +375,34 @@ public abstract class Printer {
     public void visitPackage(String packaze) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     public void visitRequire(String module, int access, String version) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     public void visitExport(String packaze, int access, String... modules) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     public void visitOpen(String packaze, int access, String... modules) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     public void visitUse(String service) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     public void visitProvide(String service, String... providers) {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     /**
      * Module end. See {@link scala.tools.asm.ModuleVisitor#visitEnd}.
      */
     public void visitModuleEnd() {
         throw new RuntimeException("Must be overriden");
     }
-    
+
     // ------------------------------------------------------------------------
     // Annotations
     // ------------------------------------------------------------------------
@@ -1180,7 +1180,7 @@ public abstract class Printer {
 
     /**
      * Returns the text constructed by this visitor.
-     * 
+     *
      * @return the text constructed by this visitor.
      */
     public List<Object> getText() {
@@ -1189,7 +1189,7 @@ public abstract class Printer {
 
     /**
      * Prints the text constructed by this visitor.
-     * 
+     *
      * @param pw
      *            the print writer to be used.
      */
@@ -1199,7 +1199,7 @@ public abstract class Printer {
 
     /**
      * Appends a quoted string to a given buffer.
-     * 
+     *
      * @param buf
      *            the buffer where the string must be added.
      * @param s
@@ -1236,7 +1236,7 @@ public abstract class Printer {
 
     /**
      * Prints the given string tree.
-     * 
+     *
      * @param pw
      *            the writer to be used to print the tree.
      * @param l

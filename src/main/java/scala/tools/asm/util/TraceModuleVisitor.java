@@ -35,11 +35,11 @@ import scala.tools.asm.Opcodes;
 /**
  * A {@link ModuleVisitor} that prints the fields it visits with a
  * {@link Printer}.
- * 
+ *
  * @author Remi Forax
  */
 public final class TraceModuleVisitor extends ModuleVisitor {
-    
+
     public final Printer p;
 
     public TraceModuleVisitor(final Printer p) {
@@ -56,37 +56,37 @@ public final class TraceModuleVisitor extends ModuleVisitor {
         p.visitMainClass(mainClass);
         super.visitMainClass(mainClass);
     }
-    
+
     @Override
     public void visitPackage(String packaze) {
         p.visitPackage(packaze);
         super.visitPackage(packaze);
     }
-    
+
     @Override
     public void visitRequire(String module, int access, String version) {
         p.visitRequire(module, access, version);
         super.visitRequire(module, access, version);
     }
-    
+
     @Override
     public void visitExport(String packaze, int access, String... modules) {
         p.visitExport(packaze, access, modules);
         super.visitExport(packaze, access, modules);
     }
-    
+
     @Override
     public void visitOpen(String packaze, int access, String... modules) {
         p.visitOpen(packaze, access, modules);
         super.visitOpen(packaze, access, modules);
     }
-    
+
     @Override
     public void visitUse(String use) {
         p.visitUse(use);
         super.visitUse(use);
     }
-    
+
     @Override
     public void visitProvide(String service, String... providers) {
         p.visitProvide(service, providers);

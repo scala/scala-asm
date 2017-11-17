@@ -34,11 +34,11 @@ package scala.tools.asm;
  * Information about the input stack map frame at the "current" instruction of a
  * method. This is implemented as a Frame subclass for a "basic block"
  * containing only one instruction.
- * 
+ *
  * @author Eric Bruneton
  */
 class CurrentFrame extends Frame {
- 
+
     /**
      * Sets this CurrentFrame to the input stack map frame of the next "current"
      * instruction, i.e. the instruction just after the given one. It is assumed

@@ -37,7 +37,7 @@ package scala.tools.asm;
  * opcodes are therefore not defined in this interface. Likewise for LDC,
  * automatically replaced by LDC_W or LDC2_W when necessary, WIDE, GOTO_W and
  * JSR_W.
- * 
+ *
  * @author Eric Bruneton
  * @author Eugene Kuleshov
  */
@@ -86,7 +86,7 @@ public interface Opcodes {
     int ACC_ENUM = 0x4000; // class(?) field inner
     int ACC_MANDATED = 0x8000; // parameter, module, module *
     int ACC_MODULE = 0x8000; // class
-    
+
 
     // ASM specific pseudo access flags
 

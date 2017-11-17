@@ -35,7 +35,7 @@ import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents a service and its implementation provided by the current module.
- * 
+ *
  * @author Remi Forax
  */
 public class ModuleProvideNode {
@@ -51,7 +51,7 @@ public class ModuleProvideNode {
 
     /**
      * Constructs a new {@link ModuleProvideNode}.
-     * 
+     *
      * @param service
      *            the service name (in its internal form).
      * @param providers
@@ -64,7 +64,7 @@ public class ModuleProvideNode {
 
     /**
      * Makes the given module visitor visit this require declaration.
-     * 
+     *
      * @param mv
      *            a module visitor.
      */

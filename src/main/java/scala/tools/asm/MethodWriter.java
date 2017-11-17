@@ -33,7 +33,7 @@ package scala.tools.asm;
  * A {@link MethodVisitor} that generates methods in bytecode form. Each visit
  * method of this class appends the bytecode corresponding to the visited
  * instruction to a byte vector, in the order these methods are called.
- * 
+ *
  * @author Eric Bruneton
  * @author Eugene Kuleshov
  */
@@ -96,7 +96,7 @@ class MethodWriter extends MethodVisitor {
      * Indicates that the stack map frames must be recomputed from scratch. In
      * this case the maximum stack size and number of local variables is also
      * recomputed from scratch.
-     * 
+     *
      * @see #compute
      */
     static final int FRAMES = 0;
@@ -108,7 +108,7 @@ class MethodWriter extends MethodVisitor {
      * together with the bytecode instructions between a F_NEW and a F_INSERT
      * frame - and without any knowledge of the type hierarchy (by definition of
      * F_INSERT).
-     * 
+     *
      * @see #compute
      */
     static final int INSERTED_FRAMES = 1;
@@ -116,14 +116,14 @@ class MethodWriter extends MethodVisitor {
     /**
      * Indicates that the maximum stack size and number of local variables must
      * be automatically computed.
-     * 
+     *
      * @see #compute
      */
     static final int MAXS = 2;
 
     /**
      * Indicates that nothing must be automatically computed.
-     * 
+     *
      * @see #compute
      */
     static final int NOTHING = 3;
@@ -275,7 +275,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * The last frame that was written in the StackMapTable attribute.
-     * 
+     *
      * @see #frame
      */
     private int[] previousFrame;
@@ -385,7 +385,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Indicates what must be automatically computed.
-     * 
+     *
      * @see #FRAMES
      * @see #INSERTED_FRAMES
      * @see #MAXS
@@ -436,7 +436,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Constructs a new {@link MethodWriter}.
-     * 
+     *
      * @param cw
      *            the class writer in which the method must be added.
      * @param access
@@ -1057,7 +1057,7 @@ class MethodWriter extends MethodVisitor {
                 // GOTO_W because we might need to insert a frame just after (as
                 // the target of the IFNOTxxx jump instruction).
                 code.putByte(220);
-                cw.hasAsmInsns = true; 
+                cw.hasAsmInsns = true;
             }
             label.put(this, code, code.length - 1, true);
         } else if (isWide) {
@@ -1679,7 +1679,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Adds a successor to the {@link #currentBlock currentBlock} block.
-     * 
+     *
      * @param info
      *            information about the control flow edge to be added.
      * @param successor
@@ -1721,7 +1721,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Visits a frame that has been computed from scratch.
-     * 
+     *
      * @param f
      *            the frame that must be visited.
      */
@@ -1836,7 +1836,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Starts the visit of a stack map frame.
-     * 
+     *
      * @param offset
      *            the offset of the instruction to which the frame corresponds.
      * @param nLocal
@@ -1965,7 +1965,7 @@ class MethodWriter extends MethodVisitor {
      * StackMapTableAttribute. This method converts types from the format used
      * in {@link Label} to the format used in StackMapTable attributes. In
      * particular, it converts type table indexes to constant pool indexes.
-     * 
+     *
      * @param start
      *            index of the first type in {@link #frame} to write.
      * @param end
@@ -2046,7 +2046,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Returns the size of the bytecode of this method.
-     * 
+     *
      * @return the size of the bytecode of this method.
      */
     final int getSize() {
@@ -2156,7 +2156,7 @@ class MethodWriter extends MethodVisitor {
 
     /**
      * Puts the bytecode of this method in the given byte vector.
-     * 
+     *
      * @param out
      *            the byte vector into which the bytecode of this method must be
      *            copied.

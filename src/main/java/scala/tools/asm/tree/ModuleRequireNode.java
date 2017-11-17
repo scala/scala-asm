@@ -33,7 +33,7 @@ import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents a required module with its name and access of a module descriptor.
- * 
+ *
  * @author Remi Forax
  */
 public class ModuleRequireNode {
@@ -48,7 +48,7 @@ public class ModuleRequireNode {
      *        <tt>ACC_SYNTHETIC</tt> and <tt>ACC_MANDATED</tt>.
      */
     public int access;
-    
+
     /**
      * Version at compile time of the required module or null.
      */
@@ -56,7 +56,7 @@ public class ModuleRequireNode {
 
     /**
      * Constructs a new {@link ModuleRequireNode}.
-     * 
+     *
      * @param module
      *            the name of the required module.
      * @param access
@@ -77,7 +77,7 @@ public class ModuleRequireNode {
 
     /**
      * Makes the given module visitor visit this require directive.
-     * 
+     *
      * @param mv
      *            a module visitor.
      */

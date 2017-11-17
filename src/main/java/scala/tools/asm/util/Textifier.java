@@ -288,7 +288,7 @@ public class Textifier extends Printer {
             text.add(buf.toString());
         }
     }
-    
+
     @Override
     public Printer visitModule(final String name, final int access,
             final String version) {
@@ -478,21 +478,21 @@ public class Textifier extends Printer {
     // ------------------------------------------------------------------------
     // Module
     // ------------------------------------------------------------------------
-    
+
     @Override
     public void visitMainClass(String mainClass) {
         buf.setLength(0);
         buf.append("  // main class ").append(mainClass).append('\n');
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitPackage(String packaze) {
         buf.setLength(0);
         buf.append("  // package ").append(packaze).append('\n');
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitRequire(String require, int access, String version) {
         buf.setLength(0);
@@ -514,7 +514,7 @@ public class Textifier extends Printer {
         }
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitExport(String export, int access, String... modules) {
         buf.setLength(0);
@@ -536,7 +536,7 @@ public class Textifier extends Printer {
         }
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitOpen(String export, int access, String... modules) {
         buf.setLength(0);
@@ -558,7 +558,7 @@ public class Textifier extends Printer {
         }
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitUse(String use) {
         buf.setLength(0);
@@ -567,7 +567,7 @@ public class Textifier extends Printer {
         buf.append(";\n");
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitProvide(String provide, String... providers) {
         buf.setLength(0);
@@ -581,12 +581,12 @@ public class Textifier extends Printer {
         }
         text.add(buf.toString());
     }
-    
+
     @Override
     public void visitModuleEnd() {
         // empty
     }
-    
+
     // ------------------------------------------------------------------------
     // Annotations
     // ------------------------------------------------------------------------

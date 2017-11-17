@@ -35,7 +35,7 @@ import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents an opened package with its name and the module that can access to it.
- * 
+ *
  * @author Remi Forax
  */
 public class ModuleOpenNode {
@@ -43,7 +43,7 @@ public class ModuleOpenNode {
      * The package name.
      */
     public String packaze;
-    
+
     /**
      * The access flags (see {@link scala.tools.asm.Opcodes}).
      * Valid values are {@code ACC_SYNTHETIC} and {@code ACC_MANDATED}.
@@ -58,7 +58,7 @@ public class ModuleOpenNode {
 
     /**
      * Constructs a new {@link ModuleOpenNode}.
-     * 
+     *
      * @param packaze
      *            the parameter's name.
      * @param modules
@@ -72,7 +72,7 @@ public class ModuleOpenNode {
 
     /**
      * Makes the given module visitor visit this open declaration.
-     * 
+     *
      * @param mv
      *            a module visitor.
      */

@@ -36,7 +36,7 @@ package scala.tools.asm;
  * <tt>visitTypeAnnotation</tt> | <tt>visitAttribute</tt> )* (
  * <tt>visitInnerClass</tt> | <tt>visitField</tt> | <tt>visitMethod</tt> )*
  * <tt>visitEnd</tt>.
- * 
+ *
  * @author Eric Bruneton
  */
 public abstract class ClassVisitor {
@@ -55,7 +55,7 @@ public abstract class ClassVisitor {
 
     /**
      * Constructs a new {@link ClassVisitor}.
-     * 
+     *
      * @param api
      *            the ASM API version implemented by this visitor. Must be one
      *            of {@link Opcodes#ASM4}, {@link Opcodes#ASM5} or {@link Opcodes#ASM6}.
@@ -66,7 +66,7 @@ public abstract class ClassVisitor {
 
     /**
      * Constructs a new {@link ClassVisitor}.
-     * 
+     *
      * @param api
      *            the ASM API version implemented by this visitor. Must be one
      *            of {@link Opcodes#ASM4}, {@link Opcodes#ASM5} or {@link Opcodes#ASM6}.
@@ -84,7 +84,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits the header of the class.
-     * 
+     *
      * @param version
      *            the class version.
      * @param access
@@ -116,7 +116,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits the source of the class.
-     * 
+     *
      * @param source
      *            the name of the source file from which the class was compiled.
      *            May be <tt>null</tt>.
@@ -130,7 +130,7 @@ public abstract class ClassVisitor {
             cv.visitSource(source, debug);
         }
     }
-    
+
     /**
      * Visit the module corresponding to the class.
      * @param name
@@ -156,7 +156,7 @@ public abstract class ClassVisitor {
     /**
      * Visits the enclosing class of the class. This method must be called only
      * if the class has an enclosing class.
-     * 
+     *
      * @param owner
      *            internal name of the enclosing class of the class.
      * @param name
@@ -176,7 +176,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits an annotation of the class.
-     * 
+     *
      * @param desc
      *            the class descriptor of the annotation class.
      * @param visible
@@ -193,7 +193,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits an annotation on a type in the class signature.
-     * 
+     *
      * @param typeRef
      *            a reference to the annotated type. The sort of this type
      *            reference must be {@link TypeReference#CLASS_TYPE_PARAMETER
@@ -226,7 +226,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits a non standard attribute of the class.
-     * 
+     *
      * @param attr
      *            an attribute.
      */
@@ -239,7 +239,7 @@ public abstract class ClassVisitor {
     /**
      * Visits information about an inner class. This inner class is not
      * necessarily a member of the class being visited.
-     * 
+     *
      * @param name
      *            the internal name of an inner class (see
      *            {@link Type#getInternalName() getInternalName}).
@@ -263,7 +263,7 @@ public abstract class ClassVisitor {
 
     /**
      * Visits a field of the class.
-     * 
+     *
      * @param access
      *            the field's access flags (see {@link Opcodes}). This parameter
      *            also indicates if the field is synthetic and/or deprecated.
@@ -300,7 +300,7 @@ public abstract class ClassVisitor {
      * Visits a method of the class. This method <i>must</i> return a new
      * {@link MethodVisitor} instance (or <tt>null</tt>) each time it is called,
      * i.e., it should not return a previously returned visitor.
-     * 
+     *
      * @param access
      *            the method's access flags (see {@link Opcodes}). This
      *            parameter also indicates if the method is synthetic and/or

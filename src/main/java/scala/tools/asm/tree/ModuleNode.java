@@ -38,7 +38,7 @@ import scala.tools.asm.Opcodes;
 
 /**
  * A node that represents a module declaration.
- * 
+ *
  * @author Remi Forax
  */
 public class ModuleNode extends ModuleVisitor {
@@ -46,55 +46,55 @@ public class ModuleNode extends ModuleVisitor {
      * Module name
      */
     public String name;
-    
+
     /**
      * Module access flags, among {@code ACC_OPEN}, {@code ACC_SYNTHETIC}
      *            and {@code ACC_MANDATED}.
      */
     public int access;
-    
+
     /**
      * Version of the module.
      * May be <tt>null</tt>.
      */
     public String version;
-    
+
     /**
      * Name of the main class in internal form
      * May be <tt>null</tt>.
      */
     public String mainClass;
-    
+
     /**
      * A list of packages that are declared by the current module.
      * May be <tt>null</tt>.
      */
     public List<String> packages;
-    
+
     /**
      * A list of modules can are required by the current module.
      * May be <tt>null</tt>.
      */
     public List<ModuleRequireNode> requires;
-    
+
     /**
      * A list of packages that are exported by the current module.
      * May be <tt>null</tt>.
      */
     public List<ModuleExportNode> exports;
-    
+
     /**
      * A list of packages that are opened by the current module.
      * May be <tt>null</tt>.
      */
     public List<ModuleOpenNode> opens;
-    
+
     /**
      * A list of classes in their internal forms that are used
      * as a service by the current module. May be <tt>null</tt>.
      */
     public List<String> uses;
-   
+
     /**
      * A list of services along with their implementations provided
      * by the current module. May be <tt>null</tt>.
@@ -108,7 +108,7 @@ public class ModuleNode extends ModuleVisitor {
         this.access = access;
         this.version = version;
     }
-    
+
     public ModuleNode(final int api,
       final String name,
       final int access,
@@ -131,12 +131,12 @@ public class ModuleNode extends ModuleVisitor {
             throw new IllegalStateException();
         }
     }
-    
+
     @Override
     public void visitMainClass(String mainClass) {
         this.mainClass = mainClass;
     }
-    
+
     @Override
     public void visitPackage(String packaze) {
         if (packages == null) {
@@ -144,7 +144,7 @@ public class ModuleNode extends ModuleVisitor {
         }
         packages.add(packaze);
     }
-    
+
     @Override
     public void visitRequire(String module, int access, String version) {
         if (requires == null) {
@@ -152,7 +152,7 @@ public class ModuleNode extends ModuleVisitor {
         }
         requires.add(new ModuleRequireNode(module, access, version));
     }
-    
+
     @Override
     public void visitExport(String packaze, int access, String... modules) {
         if (exports == null) {
@@ -167,7 +167,7 @@ public class ModuleNode extends ModuleVisitor {
         }
         exports.add(new ModuleExportNode(packaze, access, moduleList));
     }
-    
+
     @Override
     public void visitOpen(String packaze, int access, String... modules) {
         if (opens == null) {
@@ -182,7 +182,7 @@ public class ModuleNode extends ModuleVisitor {
         }
         opens.add(new ModuleOpenNode(packaze, access, moduleList));
     }
-    
+
     @Override
     public void visitUse(String service) {
         if (uses == null) {
@@ -190,7 +190,7 @@ public class ModuleNode extends ModuleVisitor {
         }
         uses.add(service);
     }
-    
+
     @Override
     public void visitProvide(String service, String... providers) {
         if (provides == null) {
@@ -203,11 +203,11 @@ public class ModuleNode extends ModuleVisitor {
         }
         provides.add(new ModuleProvideNode(service, providerList));
     }
-    
+
     @Override
     public void visitEnd() {
     }
-    
+
     public void accept(final ClassVisitor cv) {
         ModuleVisitor mv = cv.visitModule(name, access, version);
         if (mv == null) {
@@ -221,7 +221,7 @@ public class ModuleNode extends ModuleVisitor {
                 mv.visitPackage(packages.get(i));
             }
         }
-        
+
         if (requires != null) {
             for (int i = 0; i < requires.size(); i++) {
                 requires.get(i).accept(mv);

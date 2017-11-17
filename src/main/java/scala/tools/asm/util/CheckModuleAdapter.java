@@ -46,12 +46,12 @@ public final class CheckModuleAdapter extends ModuleVisitor {
     private final HashSet<String> openNames = new HashSet<String>();
     private final HashSet<String> useNames = new HashSet<String>();
     private final HashSet<String> provideNames = new HashSet<String>();
-    
+
     public CheckModuleAdapter(final ModuleVisitor mv, final boolean isOpen) {
         super(Opcodes.ASM6, mv);
         this.isOpen = isOpen;
     }
-    
+
     @Override
     public void visitRequire(String module, int access, String version) {
         checkEnd();
@@ -63,7 +63,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
                 + Opcodes.ACC_TRANSITIVE + Opcodes.ACC_SYNTHETIC + Opcodes.ACC_MANDATED);
         super.visitRequire(module, access, version);
     }
-    
+
     @Override
     public void visitExport(String packaze, int access, String... modules) {
         checkEnd();
@@ -83,7 +83,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
         }
         super.visitExport(packaze, access, modules);
     }
-    
+
     @Override
     public void visitOpen(String packaze, int access, String... modules) {
         checkEnd();
@@ -106,7 +106,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
         }
         super.visitOpen(packaze, access, modules);
     }
-    
+
     @Override
     public void visitUse(String service) {
         checkEnd();
@@ -114,7 +114,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
         checkDeclared("uses", useNames, service);
         super.visitUse(service);
     }
-    
+
     @Override
     public void visitProvide(String service, String... providers) {
         checkEnd();
@@ -128,7 +128,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
         }
         super.visitProvide(service, providers);
     }
-    
+
     @Override
     public void visitEnd() {
         checkEnd();
@@ -142,7 +142,7 @@ public final class CheckModuleAdapter extends ModuleVisitor {
                     "Cannot call a visit method after visitEnd has been called");
         }
     }
-    
+
     private static void checkDeclared(String directive, HashSet<String> names, String name) {
         if (!names.add(name)) {
             throw new IllegalArgumentException(directive + " " + name + " already declared");
