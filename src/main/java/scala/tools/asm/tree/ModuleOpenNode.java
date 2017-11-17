@@ -45,7 +45,7 @@ public class ModuleOpenNode {
     public String packaze;
     
     /**
-     * The access flags (see {@link org.objectweb.asm.Opcodes}).
+     * The access flags (see {@link scala.tools.asm.Opcodes}).
      * Valid values are {@code ACC_SYNTHETIC} and {@code ACC_MANDATED}.
      */
     public int access;

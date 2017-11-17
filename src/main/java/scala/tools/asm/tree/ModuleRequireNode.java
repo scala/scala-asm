@@ -43,7 +43,7 @@ public class ModuleRequireNode {
     public String module;
 
     /**
-     * The access flags (see {@link org.objectweb.asm.Opcodes}).
+     * The access flags (see {@link scala.tools.asm.Opcodes}).
      * Valid values are <tt>ACC_TRANSITIVE</tt>, <tt>ACC_STATIC_PHASE</tt>,
      *        <tt>ACC_SYNTHETIC</tt> and <tt>ACC_MANDATED</tt>.
      */
@@ -63,7 +63,7 @@ public class ModuleRequireNode {
      *            The access flags. Valid values are
      *            <tt>ACC_TRANSITIVE</tt>, <tt>ACC_STATIC_PHASE</tt>,
      *            <tt>ACC_SYNTHETIC</tt> and <tt>ACC_MANDATED</tt>
-     *            (see {@link org.objectweb.asm.Opcodes}).
+     *            (see {@link scala.tools.asm.Opcodes}).
      * @param version
      *            Version of the required module at compile time,
      *            null if not defined.
