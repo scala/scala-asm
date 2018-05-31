@@ -142,7 +142,7 @@ public class Label {
    * #FLAG_REACHABLE}, {@link #FLAG_SUBROUTINE_CALLER}, {@link #FLAG_SUBROUTINE_START}, {@link
    * #FLAG_SUBROUTINE_END}.
    */
-  short flags;
+  public int flags;
 
   /**
    * The source line number corresponding to this label, or 0. If there are several source line
