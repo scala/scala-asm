@@ -41,7 +41,7 @@ public class TypeInsnNode extends AbstractInsnNode {
 
   /**
    * The operand of this instruction. This operand is an internal name (see {@link
-   * org.objectweb.asm.Type}).
+   * scala.tools.asm.Type}).
    */
   public String desc;
 
@@ -51,7 +51,7 @@ public class TypeInsnNode extends AbstractInsnNode {
    * @param opcode the opcode of the type instruction to be constructed. This opcode must be NEW,
    *     ANEWARRAY, CHECKCAST or INSTANCEOF.
    * @param descriptor the operand of the instruction to be constructed. This operand is an internal
-   *     name (see {@link org.objectweb.asm.Type}).
+   *     name (see {@link scala.tools.asm.Type}).
    */
   public TypeInsnNode(final int opcode, final String descriptor) {
     super(opcode);

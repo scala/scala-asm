@@ -68,7 +68,7 @@ public class CheckModuleAdapter extends ModuleVisitor {
    *
    * @param moduleVisitor the module visitor to which this adapter must delegate calls.
    * @param isOpen whether the visited module is open. Open modules have their {@link
-   *     Opcodes#ACC_OPEN} access flag set in {@link org.objectweb.asm.ClassVisitor#visitModule}.
+   *     Opcodes#ACC_OPEN} access flag set in {@link scala.tools.asm.ClassVisitor#visitModule}.
    * @throws IllegalStateException If a subclass calls this constructor.
    */
   public CheckModuleAdapter(final ModuleVisitor moduleVisitor, final boolean isOpen) {
@@ -85,7 +85,7 @@ public class CheckModuleAdapter extends ModuleVisitor {
    *     Opcodes#ASM4}, {@link Opcodes#ASM5}, {@link Opcodes#ASM6} or {@link Opcodes#ASM7_EXPERIMENTAL}.
    * @param moduleVisitor the module visitor to which this adapter must delegate calls.
    * @param isOpen whether the visited module is open. Open modules have their {@link
-   *     Opcodes#ACC_OPEN} access flag set in {@link org.objectweb.asm.ClassVisitor#visitModule}.
+   *     Opcodes#ACC_OPEN} access flag set in {@link scala.tools.asm.ClassVisitor#visitModule}.
    */
   protected CheckModuleAdapter(
       final int api, final ModuleVisitor moduleVisitor, final boolean isOpen) {

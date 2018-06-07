@@ -41,14 +41,14 @@ public class FieldInsnNode extends AbstractInsnNode {
 
   /**
    * The internal name of the field's owner class (see {@link
-   * org.objectweb.asm.Type#getInternalName}).
+   * scala.tools.asm.Type#getInternalName}).
    */
   public String owner;
 
   /** The field's name. */
   public String name;
 
-  /** The field's descriptor (see {@link org.objectweb.asm.Type}). */
+  /** The field's descriptor (see {@link scala.tools.asm.Type}). */
   public String desc;
 
   /**
@@ -57,9 +57,9 @@ public class FieldInsnNode extends AbstractInsnNode {
    * @param opcode the opcode of the type instruction to be constructed. This opcode must be
    *     GETSTATIC, PUTSTATIC, GETFIELD or PUTFIELD.
    * @param owner the internal name of the field's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName}).
+   *     scala.tools.asm.Type#getInternalName}).
    * @param name the field's name.
-   * @param descriptor the field's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the field's descriptor (see {@link scala.tools.asm.Type}).
    */
   public FieldInsnNode(
       final int opcode, final String owner, final String name, final String descriptor) {

@@ -255,7 +255,7 @@ public abstract class Printer {
 
   /**
    * The names of the {@code operand} values of the {@link
-   * org.objectweb.asm.MethodVisitor#visitIntInsn} method when {@code opcode} is {@code NEWARRAY}.
+   * scala.tools.asm.MethodVisitor#visitIntInsn} method when {@code opcode} is {@code NEWARRAY}.
    */
   public static final String[] TYPES = {
     "",
@@ -272,7 +272,7 @@ public abstract class Printer {
     "T_LONG"
   };
 
-  /** The names of the {@code tag} field values for {@link org.objectweb.asm.Handle}. */
+  /** The names of the {@code tag} field values for {@link scala.tools.asm.Handle}. */
   public static final String[] HANDLE_TAG = {
     "",
     "H_GETFIELD",
@@ -340,21 +340,21 @@ public abstract class Printer {
   // -----------------------------------------------------------------------------------------------
 
   /**
-   * Class header. See {@link org.objectweb.asm.ClassVisitor#visit}.
+   * Class header. See {@link scala.tools.asm.ClassVisitor#visit}.
    *
    * @param version the class version. The minor version is stored in the 16 most significant bits,
    *     and the major version in the 16 least significant bits.
    * @param access the class's access flags (see {@link Opcodes}). This parameter also indicates if
    *     the class is deprecated.
    * @param name the internal name of the class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param signature the signature of this class. May be <tt>null</tt> if the class is not a
    *     generic one, and does not extend or implement generic classes or interfaces.
    * @param superName the internal of name of the super class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}). For interfaces, the super class is {@link
+   *     scala.tools.asm.Type#getInternalName()}). For interfaces, the super class is {@link
    *     Object}. May be <tt>null</tt>, but only for the {@link Object} class.
    * @param interfaces the internal names of the class's interfaces (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}). May be <tt>null</tt>.
+   *     scala.tools.asm.Type#getInternalName()}). May be <tt>null</tt>.
    */
   public abstract void visit(
       int version,
@@ -365,7 +365,7 @@ public abstract class Printer {
       String[] interfaces);
 
   /**
-   * Class source. See {@link org.objectweb.asm.ClassVisitor#visitSource}.
+   * Class source. See {@link scala.tools.asm.ClassVisitor#visitSource}.
    *
    * @param source the name of the source file from which the class was compiled. May be
    *     <tt>null</tt>.
@@ -375,7 +375,7 @@ public abstract class Printer {
   public abstract void visitSource(String source, String debug);
 
   /**
-   * Module. See {@link org.objectweb.asm.ClassVisitor#visitModule}.
+   * Module. See {@link scala.tools.asm.ClassVisitor#visitModule}.
    *
    * @param name the fully qualified name (using dots) of the module.
    * @param access the module access flags, among {@code ACC_OPEN}, {@code ACC_SYNTHETIC} and {@code
@@ -390,7 +390,7 @@ public abstract class Printer {
   /**
    * <b>Experimental, use at your own risk. This method will be renamed when it becomes stable, this
    * will break existing code using it</b>. Nest host class. See {@link
-   * org.objectweb.asm.ClassVisitor#visitNestHostExperimental}.
+   * scala.tools.asm.ClassVisitor#visitNestHostExperimental}.
    *
    * <p>Visits the nest host class of the class. A nest is a set of classes of the same package that
    * share access to their private members. One of these classes, called the host, lists the other
@@ -408,7 +408,7 @@ public abstract class Printer {
   }
 
   /**
-   * Class outer class. See {@link org.objectweb.asm.ClassVisitor#visitOuterClass}.
+   * Class outer class. See {@link scala.tools.asm.ClassVisitor#visitOuterClass}.
    *
    * @param owner internal name of the enclosing class of the class.
    * @param name the name of the method that contains the class, or <tt>null</tt> if the class is
@@ -419,7 +419,7 @@ public abstract class Printer {
   public abstract void visitOuterClass(String owner, String name, String descriptor);
 
   /**
-   * Class annotation. See {@link org.objectweb.asm.ClassVisitor#visitAnnotation}.
+   * Class annotation. See {@link scala.tools.asm.ClassVisitor#visitAnnotation}.
    *
    * @param descriptor the class descriptor of the annotation class.
    * @param visible <tt>true</tt> if the annotation is visible at runtime.
@@ -428,13 +428,13 @@ public abstract class Printer {
   public abstract Printer visitClassAnnotation(String descriptor, boolean visible);
 
   /**
-   * Class type annotation. See {@link org.objectweb.asm.ClassVisitor#visitTypeAnnotation}.
+   * Class type annotation. See {@link scala.tools.asm.ClassVisitor#visitTypeAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#CLASS_TYPE_PARAMETER}, {@link
-   *     org.objectweb.asm.TypeReference#CLASS_TYPE_PARAMETER_BOUND} or {@link
-   *     org.objectweb.asm.TypeReference#CLASS_EXTENDS}. See {@link
-   *     org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#CLASS_TYPE_PARAMETER}, {@link
+   *     scala.tools.asm.TypeReference#CLASS_TYPE_PARAMETER_BOUND} or {@link
+   *     scala.tools.asm.TypeReference#CLASS_EXTENDS}. See {@link
+   *     scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -448,7 +448,7 @@ public abstract class Printer {
   }
 
   /**
-   * Class attribute. See {@link org.objectweb.asm.ClassVisitor#visitAttribute}.
+   * Class attribute. See {@link scala.tools.asm.ClassVisitor#visitAttribute}.
    *
    * @param attribute an attribute.
    */
@@ -457,7 +457,7 @@ public abstract class Printer {
   /**
    * <b>Experimental, use at your own risk. This method will be renamed when it becomes stable, this
    * will break existing code using it</b>. Nest member name. See {@link
-   * org.objectweb.asm.ClassVisitor#visitNestMemberExperimental}.
+   * scala.tools.asm.ClassVisitor#visitNestMemberExperimental}.
    *
    * <p>Visits a member of the nest. A nest is a set of classes of the same package that share
    * access to their private members. One of these classes, called the host, lists the other members
@@ -474,12 +474,12 @@ public abstract class Printer {
   }
 
   /**
-   * Class inner name. See {@link org.objectweb.asm.ClassVisitor#visitInnerClass}.
+   * Class inner name. See {@link scala.tools.asm.ClassVisitor#visitInnerClass}.
    *
    * @param name the internal name of an inner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param outerName the internal name of the class to which the inner class belongs (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}). May be <tt>null</tt> for not member classes.
+   *     scala.tools.asm.Type#getInternalName()}). May be <tt>null</tt> for not member classes.
    * @param innerName the (simple) name of the inner class inside its enclosing class. May be
    *     <tt>null</tt> for anonymous inner classes.
    * @param access the access flags of the inner class as originally declared in the enclosing
@@ -488,12 +488,12 @@ public abstract class Printer {
   public abstract void visitInnerClass(String name, String outerName, String innerName, int access);
 
   /**
-   * Class field. See {@link org.objectweb.asm.ClassVisitor#visitField}.
+   * Class field. See {@link scala.tools.asm.ClassVisitor#visitField}.
    *
    * @param access the field's access flags (see {@link Opcodes}). This parameter also indicates if
    *     the field is synthetic and/or deprecated.
    * @param name the field's name.
-   * @param descriptor the field's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the field's descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the field's signature. May be <tt>null</tt> if the field's type does not use
    *     generic types.
    * @param value the field's initial value. This parameter, which may be <tt>null</tt> if the field
@@ -508,22 +508,22 @@ public abstract class Printer {
       int access, String name, String descriptor, String signature, Object value);
 
   /**
-   * Class method. See {@link org.objectweb.asm.ClassVisitor#visitMethod}.
+   * Class method. See {@link scala.tools.asm.ClassVisitor#visitMethod}.
    *
    * @param access the method's access flags (see {@link Opcodes}). This parameter also indicates if
    *     the method is synthetic and/or deprecated.
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the method's signature. May be <tt>null</tt> if the method parameters, return
    *     type and exceptions do not use generic types.
    * @param exceptions the internal names of the method's exception classes (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}). May be <tt>null</tt>.
+   *     scala.tools.asm.Type#getInternalName()}). May be <tt>null</tt>.
    * @return the printer.
    */
   public abstract Printer visitMethod(
       int access, String name, String descriptor, String signature, String[] exceptions);
 
-  /** Class end. See {@link org.objectweb.asm.ClassVisitor#visitEnd}. */
+  /** Class end. See {@link scala.tools.asm.ClassVisitor#visitEnd}. */
   public abstract void visitClassEnd();
 
   // -----------------------------------------------------------------------------------------------
@@ -531,7 +531,7 @@ public abstract class Printer {
   // -----------------------------------------------------------------------------------------------
 
   /**
-   * Module main class. See {@link org.objectweb.asm.ModuleVisitor#visitMainClass}.
+   * Module main class. See {@link scala.tools.asm.ModuleVisitor#visitMainClass}.
    *
    * @param mainClass the internal name of the main class of the current module.
    */
@@ -540,7 +540,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module package. See {@link org.objectweb.asm.ModuleVisitor#visitPackage}.
+   * Module package. See {@link scala.tools.asm.ModuleVisitor#visitPackage}.
    *
    * @param packaze the internal name of a package.
    */
@@ -549,7 +549,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module require. See {@link org.objectweb.asm.ModuleVisitor#visitRequire}.
+   * Module require. See {@link scala.tools.asm.ModuleVisitor#visitRequire}.
    *
    * @param module the fully qualified name (using dots) of the dependence.
    * @param access the access flag of the dependence among {@code ACC_TRANSITIVE}, {@code
@@ -561,7 +561,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module export. See {@link org.objectweb.asm.ModuleVisitor#visitExport}.
+   * Module export. See {@link scala.tools.asm.ModuleVisitor#visitExport}.
    *
    * @param packaze the internal name of the exported package.
    * @param access the access flag of the exported package, valid values are among {@code
@@ -574,7 +574,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module open. See {@link org.objectweb.asm.ModuleVisitor#visitOpen}.
+   * Module open. See {@link scala.tools.asm.ModuleVisitor#visitOpen}.
    *
    * @param packaze the internal name of the opened package.
    * @param access the access flag of the opened package, valid values are among {@code
@@ -587,7 +587,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module use. See {@link org.objectweb.asm.ModuleVisitor#visitUse}.
+   * Module use. See {@link scala.tools.asm.ModuleVisitor#visitUse}.
    *
    * @param service the internal name of the service.
    */
@@ -596,7 +596,7 @@ public abstract class Printer {
   }
 
   /**
-   * Module provide. See {@link org.objectweb.asm.ModuleVisitor#visitProvide}.
+   * Module provide. See {@link scala.tools.asm.ModuleVisitor#visitProvide}.
    *
    * @param service the internal name of the service.
    * @param providers the internal names of the implementations of the service (there is at least
@@ -606,7 +606,7 @@ public abstract class Printer {
     throw new UnsupportedOperationException(UNSUPPORTED_OPERATION);
   }
 
-  /** Module end. See {@link org.objectweb.asm.ModuleVisitor#visitEnd}. */
+  /** Module end. See {@link scala.tools.asm.ModuleVisitor#visitEnd}. */
   public void visitModuleEnd() {
     throw new UnsupportedOperationException(UNSUPPORTED_OPERATION);
   }
@@ -616,20 +616,20 @@ public abstract class Printer {
   // -----------------------------------------------------------------------------------------------
 
   /**
-   * Annotation value. See {@link org.objectweb.asm.AnnotationVisitor#visit}.
+   * Annotation value. See {@link scala.tools.asm.AnnotationVisitor#visit}.
    *
    * @param name the value name.
    * @param value the actual value, whose type must be {@link Byte}, {@link Boolean}, {@link
    *     Character}, {@link Short}, {@link Integer} , {@link Long}, {@link Float}, {@link Double},
-   *     {@link String} or {@link org.objectweb.asm.Type} of {@link org.objectweb.asm.Type#OBJECT}
-   *     or {@link org.objectweb.asm.Type#ARRAY} sort. This value can also be an array of byte,
+   *     {@link String} or {@link scala.tools.asm.Type} of {@link scala.tools.asm.Type#OBJECT}
+   *     or {@link scala.tools.asm.Type#ARRAY} sort. This value can also be an array of byte,
    *     boolean, short, char, int, long, float or double values (this is equivalent to using {@link
    *     #visitArray} and visiting each array element in turn, but is more convenient).
    */
   public abstract void visit(String name, Object value);
 
   /**
-   * Annotation enum value. See {@link org.objectweb.asm.AnnotationVisitor#visitEnum}.
+   * Annotation enum value. See {@link scala.tools.asm.AnnotationVisitor#visitEnum}.
    *
    * @param name the value name.
    * @param descriptor the class descriptor of the enumeration class.
@@ -638,7 +638,7 @@ public abstract class Printer {
   public abstract void visitEnum(String name, String descriptor, String value);
 
   /**
-   * Nested annotation value. See {@link org.objectweb.asm.AnnotationVisitor#visitAnnotation}.
+   * Nested annotation value. See {@link scala.tools.asm.AnnotationVisitor#visitAnnotation}.
    *
    * @param name the value name.
    * @param descriptor the class descriptor of the nested annotation class.
@@ -647,14 +647,14 @@ public abstract class Printer {
   public abstract Printer visitAnnotation(String name, String descriptor);
 
   /**
-   * Annotation array value. See {@link org.objectweb.asm.AnnotationVisitor#visitArray}.
+   * Annotation array value. See {@link scala.tools.asm.AnnotationVisitor#visitArray}.
    *
    * @param name the value name.
    * @return the printer.
    */
   public abstract Printer visitArray(String name);
 
-  /** Annotation end. See {@link org.objectweb.asm.AnnotationVisitor#visitEnd}. */
+  /** Annotation end. See {@link scala.tools.asm.AnnotationVisitor#visitEnd}. */
   public abstract void visitAnnotationEnd();
 
   // -----------------------------------------------------------------------------------------------
@@ -662,7 +662,7 @@ public abstract class Printer {
   // -----------------------------------------------------------------------------------------------
 
   /**
-   * Field annotation. See {@link org.objectweb.asm.FieldVisitor#visitAnnotation}.
+   * Field annotation. See {@link scala.tools.asm.FieldVisitor#visitAnnotation}.
    *
    * @param descriptor the class descriptor of the annotation class.
    * @param visible <tt>true</tt> if the annotation is visible at runtime.
@@ -671,10 +671,10 @@ public abstract class Printer {
   public abstract Printer visitFieldAnnotation(String descriptor, boolean visible);
 
   /**
-   * Field type annotation. See {@link org.objectweb.asm.FieldVisitor#visitTypeAnnotation}.
+   * Field type annotation. See {@link scala.tools.asm.FieldVisitor#visitTypeAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#FIELD}. See {@link org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#FIELD}. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -688,13 +688,13 @@ public abstract class Printer {
   }
 
   /**
-   * Field attribute. See {@link org.objectweb.asm.FieldVisitor#visitAttribute}.
+   * Field attribute. See {@link scala.tools.asm.FieldVisitor#visitAttribute}.
    *
    * @param attribute an attribute.
    */
   public abstract void visitFieldAttribute(Attribute attribute);
 
-  /** Field end. See {@link org.objectweb.asm.FieldVisitor#visitEnd}. */
+  /** Field end. See {@link scala.tools.asm.FieldVisitor#visitEnd}. */
   public abstract void visitFieldEnd();
 
   // -----------------------------------------------------------------------------------------------
@@ -702,7 +702,7 @@ public abstract class Printer {
   // -----------------------------------------------------------------------------------------------
 
   /**
-   * Method parameter. See {@link org.objectweb.asm.MethodVisitor#visitParameter(String, int)}.
+   * Method parameter. See {@link scala.tools.asm.MethodVisitor#visitParameter(String, int)}.
    *
    * @param name parameter name or null if none is provided.
    * @param access the parameter's access flags, only <tt>ACC_FINAL</tt>, <tt>ACC_SYNTHETIC</tt>
@@ -713,14 +713,14 @@ public abstract class Printer {
   }
 
   /**
-   * Method default annotation. See {@link org.objectweb.asm.MethodVisitor#visitAnnotationDefault}.
+   * Method default annotation. See {@link scala.tools.asm.MethodVisitor#visitAnnotationDefault}.
    *
    * @return the printer.
    */
   public abstract Printer visitAnnotationDefault();
 
   /**
-   * Method annotation. See {@link org.objectweb.asm.MethodVisitor#visitAnnotation}.
+   * Method annotation. See {@link scala.tools.asm.MethodVisitor#visitAnnotation}.
    *
    * @param descriptor the class descriptor of the annotation class.
    * @param visible <tt>true</tt> if the annotation is visible at runtime.
@@ -729,15 +729,15 @@ public abstract class Printer {
   public abstract Printer visitMethodAnnotation(String descriptor, boolean visible);
 
   /**
-   * Method type annotation. See {@link org.objectweb.asm.MethodVisitor#visitTypeAnnotation}.
+   * Method type annotation. See {@link scala.tools.asm.MethodVisitor#visitTypeAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#METHOD_TYPE_PARAMETER}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_TYPE_PARAMETER_BOUND}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_RETURN}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_RECEIVER}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_FORMAL_PARAMETER} or {@link
-   *     org.objectweb.asm.TypeReference#THROWS}. See {@link org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#METHOD_TYPE_PARAMETER}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_TYPE_PARAMETER_BOUND}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_RETURN}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_RECEIVER}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_FORMAL_PARAMETER} or {@link
+   *     scala.tools.asm.TypeReference#THROWS}. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -752,7 +752,7 @@ public abstract class Printer {
 
   /**
    * Number of method parameters that can have annotations. See {@link
-   * org.objectweb.asm.MethodVisitor#visitAnnotableParameterCount}.
+   * scala.tools.asm.MethodVisitor#visitAnnotableParameterCount}.
    *
    * @param parameterCount the number of method parameters than can have annotations. This number
    *     must be less or equal than the number of parameter types in the method descriptor. It can
@@ -770,7 +770,7 @@ public abstract class Printer {
 
   /**
    * Method parameter annotation. See {@link
-   * org.objectweb.asm.MethodVisitor#visitParameterAnnotation}.
+   * scala.tools.asm.MethodVisitor#visitParameterAnnotation}.
    *
    * @param parameter the parameter index. This index must be strictly smaller than the number of
    *     parameters in the method descriptor, and strictly smaller than the parameter count
@@ -786,17 +786,17 @@ public abstract class Printer {
       int parameter, String descriptor, boolean visible);
 
   /**
-   * Method attribute. See {@link org.objectweb.asm.MethodVisitor#visitAttribute}.
+   * Method attribute. See {@link scala.tools.asm.MethodVisitor#visitAttribute}.
    *
    * @param attribute an attribute.
    */
   public abstract void visitMethodAttribute(Attribute attribute);
 
-  /** Method start. See {@link org.objectweb.asm.MethodVisitor#visitCode}. */
+  /** Method start. See {@link scala.tools.asm.MethodVisitor#visitCode}. */
   public abstract void visitCode();
 
   /**
-   * Method stack frame. See {@link org.objectweb.asm.MethodVisitor#visitFrame}.
+   * Method stack frame. See {@link scala.tools.asm.MethodVisitor#visitFrame}.
    *
    * @param type the type of this stack map frame. Must be {@link Opcodes#F_NEW} for expanded
    *     frames, or {@link Opcodes#F_FULL}, {@link Opcodes#F_APPEND}, {@link Opcodes#F_CHOP}, {@link
@@ -816,7 +816,7 @@ public abstract class Printer {
   public abstract void visitFrame(int type, int nLocal, Object[] local, int nStack, Object[] stack);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitInsn}
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitInsn}
    *
    * @param opcode the opcode of the instruction to be visited. This opcode is either NOP,
    *     ACONST_NULL, ICONST_M1, ICONST_0, ICONST_1, ICONST_2, ICONST_3, ICONST_4, ICONST_5,
@@ -832,7 +832,7 @@ public abstract class Printer {
   public abstract void visitInsn(int opcode);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitIntInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitIntInsn}.
    *
    * @param opcode the opcode of the instruction to be visited. This opcode is either BIPUSH, SIPUSH
    *     or NEWARRAY.
@@ -848,7 +848,7 @@ public abstract class Printer {
   public abstract void visitIntInsn(int opcode, int operand);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitVarInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitVarInsn}.
    *
    * @param opcode the opcode of the local variable instruction to be visited. This opcode is either
    *     ILOAD, LLOAD, FLOAD, DLOAD, ALOAD, ISTORE, LSTORE, FSTORE, DSTORE, ASTORE or RET.
@@ -858,36 +858,36 @@ public abstract class Printer {
   public abstract void visitVarInsn(int opcode, int var);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitTypeInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitTypeInsn}.
    *
    * @param opcode the opcode of the type instruction to be visited. This opcode is either NEW,
    *     ANEWARRAY, CHECKCAST or INSTANCEOF.
    * @param type the operand of the instruction to be visited. This operand must be the internal
-   *     name of an object or array class (see {@link org.objectweb.asm.Type#getInternalName()}).
+   *     name of an object or array class (see {@link scala.tools.asm.Type#getInternalName()}).
    */
   public abstract void visitTypeInsn(int opcode, String type);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitFieldInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitFieldInsn}.
    *
    * @param opcode the opcode of the type instruction to be visited. This opcode is either
    *     GETSTATIC, PUTSTATIC, GETFIELD or PUTFIELD.
    * @param owner the internal name of the field's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param name the field's name.
-   * @param descriptor the field's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the field's descriptor (see {@link scala.tools.asm.Type}).
    */
   public abstract void visitFieldInsn(int opcode, String owner, String name, String descriptor);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitMethodInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitMethodInsn}.
    *
    * @param opcode the opcode of the type instruction to be visited. This opcode is either
    *     INVOKEVIRTUAL, INVOKESPECIAL, INVOKESTATIC or INVOKEINTERFACE.
    * @param owner the internal name of the method's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @deprecated
    */
   @Deprecated
@@ -902,14 +902,14 @@ public abstract class Printer {
   }
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitMethodInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitMethodInsn}.
    *
    * @param opcode the opcode of the type instruction to be visited. This opcode is either
    *     INVOKEVIRTUAL, INVOKESPECIAL, INVOKESTATIC or INVOKEINTERFACE.
    * @param owner the internal name of the method's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @param isInterface if the method's owner class is an interface.
    */
   public void visitMethodInsn(
@@ -929,14 +929,14 @@ public abstract class Printer {
   }
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitInvokeDynamicInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitInvokeDynamicInsn}.
    *
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @param bootstrapMethodHandle the bootstrap method.
    * @param bootstrapMethodArguments the bootstrap method constant arguments. Each argument must be
    *     an {@link Integer}, {@link Float}, {@link Long}, {@link Double}, {@link String}, {@link
-   *     org.objectweb.asm.Type} or {@link Handle} value. This method is allowed to modify the
+   *     scala.tools.asm.Type} or {@link Handle} value. This method is allowed to modify the
    *     content of the array so a caller should expect that this array may change.
    */
   public abstract void visitInvokeDynamicInsn(
@@ -946,7 +946,7 @@ public abstract class Printer {
       Object... bootstrapMethodArguments);
 
   /**
-   * Method jump instruction. See {@link org.objectweb.asm.MethodVisitor#visitJumpInsn}.
+   * Method jump instruction. See {@link scala.tools.asm.MethodVisitor#visitJumpInsn}.
    *
    * @param opcode the opcode of the type instruction to be visited. This opcode is either IFEQ,
    *     IFNE, IFLT, IFGE, IFGT, IFLE, IF_ICMPEQ, IF_ICMPNE, IF_ICMPLT, IF_ICMPGE, IF_ICMPGT,
@@ -957,14 +957,14 @@ public abstract class Printer {
   public abstract void visitJumpInsn(int opcode, Label label);
 
   /**
-   * Method label. See {@link org.objectweb.asm.MethodVisitor#visitLabel}.
+   * Method label. See {@link scala.tools.asm.MethodVisitor#visitLabel}.
    *
    * @param label a {@link Label} object.
    */
   public abstract void visitLabel(Label label);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitLdcInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitLdcInsn}.
    *
    * @param value the constant to be loaded on the stack. This parameter must be a non null {@link
    *     Integer}, a {@link Float}, a {@link Long}, a {@link Double}, a {@link String}, a {@link
@@ -976,7 +976,7 @@ public abstract class Printer {
   public abstract void visitLdcInsn(Object value);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitIincInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitIincInsn}.
    *
    * @param var index of the local variable to be incremented.
    * @param increment amount to increment the local variable by.
@@ -984,7 +984,7 @@ public abstract class Printer {
   public abstract void visitIincInsn(int var, int increment);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitTableSwitchInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitTableSwitchInsn}.
    *
    * @param min the minimum key value.
    * @param max the maximum key value.
@@ -995,7 +995,7 @@ public abstract class Printer {
   public abstract void visitTableSwitchInsn(int min, int max, Label dflt, Label... labels);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitLookupSwitchInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitLookupSwitchInsn}.
    *
    * @param dflt beginning of the default handler block.
    * @param keys the values of the keys.
@@ -1005,27 +1005,27 @@ public abstract class Printer {
   public abstract void visitLookupSwitchInsn(Label dflt, int[] keys, Label[] labels);
 
   /**
-   * Method instruction. See {@link org.objectweb.asm.MethodVisitor#visitMultiANewArrayInsn}.
+   * Method instruction. See {@link scala.tools.asm.MethodVisitor#visitMultiANewArrayInsn}.
    *
-   * @param descriptor an array type descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor an array type descriptor (see {@link scala.tools.asm.Type}).
    * @param numDimensions the number of dimensions of the array to allocate.
    */
   public abstract void visitMultiANewArrayInsn(String descriptor, int numDimensions);
 
   /**
-   * Instruction type annotation. See {@link org.objectweb.asm.MethodVisitor#visitInsnAnnotation}.
+   * Instruction type annotation. See {@link scala.tools.asm.MethodVisitor#visitInsnAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#INSTANCEOF}, {@link
-   *     org.objectweb.asm.TypeReference#NEW}, {@link
-   *     org.objectweb.asm.TypeReference#CONSTRUCTOR_REFERENCE}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_REFERENCE}, {@link
-   *     org.objectweb.asm.TypeReference#CAST}, {@link
-   *     org.objectweb.asm.TypeReference#CONSTRUCTOR_INVOCATION_TYPE_ARGUMENT}, {@link
-   *     org.objectweb.asm.TypeReference#METHOD_INVOCATION_TYPE_ARGUMENT}, {@link
-   *     org.objectweb.asm.TypeReference#CONSTRUCTOR_REFERENCE_TYPE_ARGUMENT}, or {@link
-   *     org.objectweb.asm.TypeReference#METHOD_REFERENCE_TYPE_ARGUMENT}. See {@link
-   *     org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#INSTANCEOF}, {@link
+   *     scala.tools.asm.TypeReference#NEW}, {@link
+   *     scala.tools.asm.TypeReference#CONSTRUCTOR_REFERENCE}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_REFERENCE}, {@link
+   *     scala.tools.asm.TypeReference#CAST}, {@link
+   *     scala.tools.asm.TypeReference#CONSTRUCTOR_INVOCATION_TYPE_ARGUMENT}, {@link
+   *     scala.tools.asm.TypeReference#METHOD_INVOCATION_TYPE_ARGUMENT}, {@link
+   *     scala.tools.asm.TypeReference#CONSTRUCTOR_REFERENCE_TYPE_ARGUMENT}, or {@link
+   *     scala.tools.asm.TypeReference#METHOD_REFERENCE_TYPE_ARGUMENT}. See {@link
+   *     scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -1039,7 +1039,7 @@ public abstract class Printer {
   }
 
   /**
-   * Method exception handler. See {@link org.objectweb.asm.MethodVisitor#visitTryCatchBlock}.
+   * Method exception handler. See {@link scala.tools.asm.MethodVisitor#visitTryCatchBlock}.
    *
    * @param start the beginning of the exception handler's scope (inclusive).
    * @param end the end of the exception handler's scope (exclusive).
@@ -1051,11 +1051,11 @@ public abstract class Printer {
 
   /**
    * Try catch block type annotation. See {@link
-   * org.objectweb.asm.MethodVisitor#visitTryCatchAnnotation}.
+   * scala.tools.asm.MethodVisitor#visitTryCatchAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#EXCEPTION_PARAMETER}. See {@link
-   *     org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#EXCEPTION_PARAMETER}. See {@link
+   *     scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -1069,7 +1069,7 @@ public abstract class Printer {
   }
 
   /**
-   * Method debug info. See {@link org.objectweb.asm.MethodVisitor#visitLocalVariable}.
+   * Method debug info. See {@link scala.tools.asm.MethodVisitor#visitLocalVariable}.
    *
    * @param name the name of a local variable.
    * @param descriptor the type descriptor of this local variable.
@@ -1085,12 +1085,12 @@ public abstract class Printer {
 
   /**
    * Local variable type annotation. See {@link
-   * org.objectweb.asm.MethodVisitor#visitTryCatchAnnotation}.
+   * scala.tools.asm.MethodVisitor#visitTryCatchAnnotation}.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#LOCAL_VARIABLE} or {@link
-   *     org.objectweb.asm.TypeReference#RESOURCE_VARIABLE}. See {@link
-   *     org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#LOCAL_VARIABLE} or {@link
+   *     scala.tools.asm.TypeReference#RESOURCE_VARIABLE}. See {@link
+   *     scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -1116,7 +1116,7 @@ public abstract class Printer {
   }
 
   /**
-   * Method debug info. See {@link org.objectweb.asm.MethodVisitor#visitLineNumber}.
+   * Method debug info. See {@link scala.tools.asm.MethodVisitor#visitLineNumber}.
    *
    * @param line a line number. This number refers to the source file from which the class was
    *     compiled.
@@ -1125,14 +1125,14 @@ public abstract class Printer {
   public abstract void visitLineNumber(int line, Label start);
 
   /**
-   * Method max stack and max locals. See {@link org.objectweb.asm.MethodVisitor#visitMaxs}.
+   * Method max stack and max locals. See {@link scala.tools.asm.MethodVisitor#visitMaxs}.
    *
    * @param maxStack maximum stack size of the method.
    * @param maxLocals maximum number of local variables for the method.
    */
   public abstract void visitMaxs(int maxStack, int maxLocals);
 
-  /** Method end. See {@link org.objectweb.asm.MethodVisitor#visitEnd}. */
+  /** Method end. See {@link scala.tools.asm.MethodVisitor#visitEnd}. */
   public abstract void visitMethodEnd();
 
   // -----------------------------------------------------------------------------------------------

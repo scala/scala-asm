@@ -47,7 +47,7 @@ public class AnnotationNode extends AnnotationVisitor {
    * The name value pairs of this annotation. Each name value pair is stored as two consecutive
    * elements in the list. The name is a {@link String}, and the value may be a {@link Byte}, {@link
    * Boolean}, {@link Character}, {@link Short}, {@link Integer}, {@link Long}, {@link Float},
-   * {@link Double}, {@link String} or {@link org.objectweb.asm.Type}, or a two elements String
+   * {@link Double}, {@link String} or {@link scala.tools.asm.Type}, or a two elements String
    * array (for enumeration values), an {@link AnnotationNode}, or a {@link List} of values of one
    * of the preceding types. The list may be <tt>null</tt> if there is no name value pair.
    */

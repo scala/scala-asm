@@ -45,7 +45,7 @@ import scala.tools.asm.TypePath;
 public class FieldNode extends FieldVisitor {
 
   /**
-   * The field's access flags (see {@link org.objectweb.asm.Opcodes}). This field also indicates if
+   * The field's access flags (see {@link scala.tools.asm.Opcodes}). This field also indicates if
    * the field is synthetic and/or deprecated.
    */
   public int access;
@@ -53,7 +53,7 @@ public class FieldNode extends FieldVisitor {
   /** The field's name. */
   public String name;
 
-  /** The field's descriptor (see {@link org.objectweb.asm.Type}). */
+  /** The field's descriptor (see {@link scala.tools.asm.Type}). */
   public String desc;
 
   /** The field's signature. May be <tt>null</tt>. */
@@ -85,10 +85,10 @@ public class FieldNode extends FieldVisitor {
    * Constructs a new {@link FieldNode}. <i>Subclasses must not use this constructor</i>. Instead,
    * they must use the {@link #FieldNode(int, int, String, String, String, Object)} version.
    *
-   * @param access the field's access flags (see {@link org.objectweb.asm.Opcodes}). This parameter
+   * @param access the field's access flags (see {@link scala.tools.asm.Opcodes}). This parameter
    *     also indicates if the field is synthetic and/or deprecated.
    * @param name the field's name.
-   * @param descriptor the field's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the field's descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the field's signature.
    * @param value the field's initial value. This parameter, which may be <tt>null</tt> if the field
    *     does not have an initial value, must be an {@link Integer}, a {@link Float}, a {@link
@@ -112,10 +112,10 @@ public class FieldNode extends FieldVisitor {
    *
    * @param api the ASM API version implemented by this visitor. Must be one of {@link Opcodes#ASM4}
    *     or {@link Opcodes#ASM5}.
-   * @param access the field's access flags (see {@link org.objectweb.asm.Opcodes}). This parameter
+   * @param access the field's access flags (see {@link scala.tools.asm.Opcodes}). This parameter
    *     also indicates if the field is synthetic and/or deprecated.
    * @param name the field's name.
-   * @param descriptor the field's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the field's descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the field's signature.
    * @param value the field's initial value. This parameter, which may be <tt>null</tt> if the field
    *     does not have an initial value, must be an {@link Integer}, a {@link Float}, a {@link

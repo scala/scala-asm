@@ -37,7 +37,7 @@ import scala.tools.asm.TypePath;
  */
 public class TypeAnnotationNode extends AnnotationNode {
 
-  /** A reference to the annotated type. See {@link org.objectweb.asm.TypeReference}. */
+  /** A reference to the annotated type. See {@link scala.tools.asm.TypeReference}. */
   public int typeRef;
 
   /**
@@ -51,7 +51,7 @@ public class TypeAnnotationNode extends AnnotationNode {
    * Constructs a new {@link AnnotationNode}. <i>Subclasses must not use this constructor</i>.
    * Instead, they must use the {@link #TypeAnnotationNode(int, int, TypePath, String)} version.
    *
-   * @param typeRef a reference to the annotated type. See {@link org.objectweb.asm.TypeReference}.
+   * @param typeRef a reference to the annotated type. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -70,7 +70,7 @@ public class TypeAnnotationNode extends AnnotationNode {
    *
    * @param api the ASM API version implemented by this visitor. Must be one of {@link
    *     Opcodes#ASM4}, {@link Opcodes#ASM5}, {@link Opcodes#ASM6} or {@link Opcodes#ASM7_EXPERIMENTAL}.
-   * @param typeRef a reference to the annotated type. See {@link org.objectweb.asm.TypeReference}.
+   * @param typeRef a reference to the annotated type. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.

@@ -66,7 +66,7 @@ public class LocalVariableAnnotationNode extends TypeAnnotationNode {
    * constructor</i>. Instead, they must use the {@link #LocalVariableAnnotationNode(int, TypePath,
    * LabelNode[], LabelNode[], int[], String)} version.
    *
-   * @param typeRef a reference to the annotated type. See {@link org.objectweb.asm.TypeReference}.
+   * @param typeRef a reference to the annotated type. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be <tt>null</tt> if the annotation targets
    *     'typeRef' as a whole.
@@ -93,7 +93,7 @@ public class LocalVariableAnnotationNode extends TypeAnnotationNode {
    *
    * @param api the ASM API version implemented by this visitor. Must be one of {@link
    *     Opcodes#ASM4}, {@link Opcodes#ASM5}, {@link Opcodes#ASM6} or {@link Opcodes#ASM7_EXPERIMENTAL}.
-   * @param typeRef a reference to the annotated type. See {@link org.objectweb.asm.TypeReference}.
+   * @param typeRef a reference to the annotated type. See {@link scala.tools.asm.TypeReference}.
    * @param start the fist instructions corresponding to the continuous ranges that make the scope
    *     of this local variable (inclusive).
    * @param end the last instructions corresponding to the continuous ranges that make the scope of

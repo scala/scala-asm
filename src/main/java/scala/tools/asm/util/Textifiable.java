@@ -26,7 +26,7 @@ import java.util.Map;
 import scala.tools.asm.Label;
 
 /**
- * An {@link org.objectweb.asm.Attribute} that can print a readable representation of itself.
+ * An {@link scala.tools.asm.Attribute} that can print a readable representation of itself.
  *
  * @author Eugene Kuleshov
  */

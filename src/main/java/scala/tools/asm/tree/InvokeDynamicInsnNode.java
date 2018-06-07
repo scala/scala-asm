@@ -43,7 +43,7 @@ public class InvokeDynamicInsnNode extends AbstractInsnNode {
   /** The method's name. */
   public String name;
 
-  /** The method's descriptor (see {@link org.objectweb.asm.Type}). */
+  /** The method's descriptor (see {@link scala.tools.asm.Type}). */
   public String desc;
 
   /** The bootstrap method. */
@@ -56,11 +56,11 @@ public class InvokeDynamicInsnNode extends AbstractInsnNode {
    * Constructs a new {@link InvokeDynamicInsnNode}.
    *
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @param bootstrapMethodHandle the bootstrap method.
    * @param bootstrapMethodArguments the bootstrap method constant arguments. Each argument must be
    *     an {@link Integer}, {@link Float}, {@link Long}, {@link Double}, {@link String}, {@link
-   *     org.objectweb.asm.Type} or {@link Handle} value. This method is allowed to modify the
+   *     scala.tools.asm.Type} or {@link Handle} value. This method is allowed to modify the
    *     content of the array so a caller should expect that this array may change.
    */
   public InvokeDynamicInsnNode(

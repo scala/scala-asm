@@ -86,9 +86,9 @@ import scala.tools.asm.tree.analysis.SimpleVerifier;
  * (format is - insnNumber locals : stack):
  *
  * <pre>
- * org.objectweb.asm.tree.analysis.AnalyzerException: Error at instruction 71: Expected I, but found .
- *   at org.objectweb.asm.tree.analysis.Analyzer.analyze(Analyzer.java:...)
- *   at org.objectweb.asm.util.CheckClassAdapter.verify(CheckClassAdapter.java:...)
+ * scala.tools.asm.tree.analysis.AnalyzerException: Error at instruction 71: Expected I, but found .
+ *   at scala.tools.asm.tree.analysis.Analyzer.analyze(Analyzer.java:...)
+ *   at scala.tools.asm.util.CheckClassAdapter.verify(CheckClassAdapter.java:...)
  * ...
  * remove()V
  * 00000 LinkedBlockingQueue$Itr . . . . . . . .  : ICONST_0
