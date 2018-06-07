@@ -25,9 +25,9 @@ git.useGitDescribe := true
 scalaVersionsByJvm in ThisBuild := {
   val vs = List("2.11.11")
   Map(
-    6 -> vs.map(_ -> true),
+    6 -> vs.map(_ -> false),
     7 -> vs.map(_ -> false),
-    8 -> vs.map(_ -> false),
+    8 -> vs.map(_ -> true),
     9 -> vs.map(_ -> false))
 }
 
@@ -37,9 +37,9 @@ autoScalaLibrary := false
 // Don't add `_<scala-version>` to the jar file name - it's a Java-only project, no Scala cross-versioning needed
 crossPaths := false
 
-javacOptions ++= Seq("-g", "-source", "1.5", "-target", "1.6")
+javacOptions ++= Seq("-g", "-source", "1.6", "-target", "1.6")
 
 // javadoc fails if we pass all of the above
-javacOptions in doc := Seq("-source", "1.5")
+javacOptions in doc := Seq("-source", "1.6")
 
 OsgiKeys.exportPackage := Seq(s"scala.tools.asm.*;version=${version.value}")

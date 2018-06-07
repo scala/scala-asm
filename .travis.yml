@@ -11,13 +11,7 @@ env:
 
 script: admin/build.sh
 
-# https://github.com/travis-ci/travis-ci/issues/8199#issuecomment-327246053
-addons:
-  apt:
-    packages:
-      - openjdk-6-jdk
-
-jdk: openjdk6
+jdk: openjdk8
 
 notifications:
   email: lukas.rytz@lightbend.com
