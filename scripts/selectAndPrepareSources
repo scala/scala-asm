@@ -37,6 +37,7 @@ mkdir -p src/main/java/scala/tools/asm
 for base in asm asm-util asm-commons asm-tree asm-analysis; do
     cp -R $base/src/main/java/org/objectweb/asm/* src/main/java/scala/tools/asm/
     rm -r $base
+    git add -A $base
 done
 git add src
 
