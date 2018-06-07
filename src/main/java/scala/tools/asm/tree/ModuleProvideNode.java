@@ -29,7 +29,7 @@ package scala.tools.asm.tree;
 
 import java.util.List;
 
-import org.objectweb.asm.ModuleVisitor;
+import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents a service and its implementation provided by the current module.

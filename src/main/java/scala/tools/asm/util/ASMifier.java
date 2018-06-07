@@ -32,13 +32,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.objectweb.asm.Attribute;
-import org.objectweb.asm.ConstantDynamic;
-import org.objectweb.asm.Handle;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.TypePath;
+import scala.tools.asm.Attribute;
+import scala.tools.asm.ConstantDynamic;
+import scala.tools.asm.Handle;
+import scala.tools.asm.Label;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.Type;
+import scala.tools.asm.TypePath;
 
 /**
  * A {@link Printer} that prints the ASM code to generate the classes if visits.
@@ -160,18 +160,18 @@ public class ASMifier extends Printer {
         simpleName = name.substring(lastSlashIndex + 1).replace('-', '_');
       }
     }
-    text.add("import org.objectweb.asm.AnnotationVisitor;\n");
-    text.add("import org.objectweb.asm.Attribute;\n");
-    text.add("import org.objectweb.asm.ClassReader;\n");
-    text.add("import org.objectweb.asm.ClassWriter;\n");
-    text.add("import org.objectweb.asm.ConstantDynamic;\n");
-    text.add("import org.objectweb.asm.FieldVisitor;\n");
-    text.add("import org.objectweb.asm.Handle;\n");
-    text.add("import org.objectweb.asm.Label;\n");
-    text.add("import org.objectweb.asm.MethodVisitor;\n");
-    text.add("import org.objectweb.asm.Opcodes;\n");
-    text.add("import org.objectweb.asm.Type;\n");
-    text.add("import org.objectweb.asm.TypePath;\n");
+    text.add("import scala.tools.asm.AnnotationVisitor;\n");
+    text.add("import scala.tools.asm.Attribute;\n");
+    text.add("import scala.tools.asm.ClassReader;\n");
+    text.add("import scala.tools.asm.ClassWriter;\n");
+    text.add("import scala.tools.asm.ConstantDynamic;\n");
+    text.add("import scala.tools.asm.FieldVisitor;\n");
+    text.add("import scala.tools.asm.Handle;\n");
+    text.add("import scala.tools.asm.Label;\n");
+    text.add("import scala.tools.asm.MethodVisitor;\n");
+    text.add("import scala.tools.asm.Opcodes;\n");
+    text.add("import scala.tools.asm.Type;\n");
+    text.add("import scala.tools.asm.TypePath;\n");
     text.add("public class " + simpleName + "Dump implements Opcodes {\n\n");
     text.add("public static byte[] dump () throws Exception {\n\n");
     text.add("ClassWriter classWriter = new ClassWriter(0);\n");

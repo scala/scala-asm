@@ -29,8 +29,8 @@ package scala.tools.asm.util;
 
 import java.util.EnumSet;
 
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.signature.SignatureVisitor;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.signature.SignatureVisitor;
 
 /**
  * A {@link SignatureVisitor} that checks that its methods are properly used.

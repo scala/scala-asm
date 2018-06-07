@@ -27,7 +27,7 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.tree.analysis;
 
-import org.objectweb.asm.tree.AbstractInsnNode;
+import scala.tools.asm.tree.AbstractInsnNode;
 
 /**
  * An exception thrown if a problem occurs during the analysis of a method.

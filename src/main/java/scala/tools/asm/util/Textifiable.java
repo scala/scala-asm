@@ -23,7 +23,7 @@ package scala.tools.asm.util;
 
 import java.util.Map;
 
-import org.objectweb.asm.Label;
+import scala.tools.asm.Label;
 
 /**
  * An {@link org.objectweb.asm.Attribute} that can print a readable representation of itself.

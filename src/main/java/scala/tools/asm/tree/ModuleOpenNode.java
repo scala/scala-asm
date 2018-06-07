@@ -29,7 +29,7 @@ package scala.tools.asm.tree;
 
 import java.util.List;
 
-import org.objectweb.asm.ModuleVisitor;
+import scala.tools.asm.ModuleVisitor;
 
 /**
  * A node that represents an opened package with its name and the module that can access it.

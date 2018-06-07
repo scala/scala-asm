@@ -27,7 +27,7 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.tree;
 
-import org.objectweb.asm.ClassVisitor;
+import scala.tools.asm.ClassVisitor;
 
 /**
  * A node that represents an inner class.

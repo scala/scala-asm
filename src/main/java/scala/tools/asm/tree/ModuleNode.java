@@ -30,9 +30,9 @@ package scala.tools.asm.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.ModuleVisitor;
-import org.objectweb.asm.Opcodes;
+import scala.tools.asm.ClassVisitor;
+import scala.tools.asm.ModuleVisitor;
+import scala.tools.asm.Opcodes;
 
 /**
  * A node that represents a module declaration.
