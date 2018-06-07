@@ -25,7 +25,7 @@
 // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 // THE POSSIBILITY OF SUCH DAMAGE.
-package org.objectweb.asm.commons;
+package scala.tools.asm.commons;
 
 import org.objectweb.asm.Handle;
 import org.objectweb.asm.Label;
