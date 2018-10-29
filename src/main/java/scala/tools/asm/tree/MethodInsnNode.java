@@ -41,7 +41,7 @@ public class MethodInsnNode extends AbstractInsnNode {
 
   /**
    * The internal name of the method's owner class (see {@link
-   * org.objectweb.asm.Type#getInternalName()}).
+   * scala.tools.asm.Type#getInternalName()}).
    *
    * <p>For methods of arrays, e.g., {@code clone()}, the array type descriptor.
    */
@@ -50,7 +50,7 @@ public class MethodInsnNode extends AbstractInsnNode {
   /** The method's name. */
   public String name;
 
-  /** The method's descriptor (see {@link org.objectweb.asm.Type}). */
+  /** The method's descriptor (see {@link scala.tools.asm.Type}). */
   public String desc;
 
   /** Whether the method's owner class if an interface. */
@@ -62,9 +62,9 @@ public class MethodInsnNode extends AbstractInsnNode {
    * @param opcode the opcode of the type instruction to be constructed. This opcode must be
    *     INVOKEVIRTUAL, INVOKESPECIAL, INVOKESTATIC or INVOKEINTERFACE.
    * @param owner the internal name of the method's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @deprecated use {@link #MethodInsnNode(int, String, String, String, boolean)} instead.
    */
   @Deprecated
@@ -79,9 +79,9 @@ public class MethodInsnNode extends AbstractInsnNode {
    * @param opcode the opcode of the type instruction to be constructed. This opcode must be
    *     INVOKEVIRTUAL, INVOKESPECIAL, INVOKESTATIC or INVOKEINTERFACE.
    * @param owner the internal name of the method's owner class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param name the method's name.
-   * @param descriptor the method's descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the method's descriptor (see {@link scala.tools.asm.Type}).
    * @param isInterface if the method's owner class is an interface.
    */
   public MethodInsnNode(
