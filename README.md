@@ -108,6 +108,7 @@ Rebase and clean up
 Check that the build works correctly
   - `sbt clean update test publishLocal`
   - `for f in target/*.jar; do unzip -l $f; done`
+  - Switch to JDK6 and run `sbt clean compile`
 
 Push the branch to your fork, check everything
   - `git push`
