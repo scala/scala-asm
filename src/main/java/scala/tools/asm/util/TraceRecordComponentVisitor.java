@@ -27,11 +27,11 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.util;
 
-import org.objectweb.asm.AnnotationVisitor;
-import org.objectweb.asm.Attribute;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.RecordComponentVisitor;
-import org.objectweb.asm.TypePath;
+import scala.tools.asm.AnnotationVisitor;
+import scala.tools.asm.Attribute;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.RecordComponentVisitor;
+import scala.tools.asm.TypePath;
 
 /**
  * A {@link RecordComponentVisitor} that prints the record components it visits with a {@link
