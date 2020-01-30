@@ -31,6 +31,8 @@ Pull changes / tags from upstream
   - `git fetch upstream-asm --tags`
 
 Review the upstream changes to see if there's anything that requires attention, updates to scripts in this repo, or similar
+  - https://asm.ow2.io/versions.html
+  - `git push upstream-github --tags`
   - https://github.com/scala/scala-asm/compare/ASM_5_1...ASM_5_2
 
 Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
@@ -108,7 +110,6 @@ Rebase and clean up
 Check that the build works correctly
   - `sbt clean update test publishLocal`
   - `for f in target/*.jar; do unzip -l $f; done`
-  - Switch to JDK6 and run `sbt clean compile`
 
 Push the branch to your fork, check everything
   - `git push`
