@@ -45,7 +45,7 @@ import scala.tools.asm.TypePath;
 public class RecordComponentNode extends RecordComponentVisitor {
 
   /**
-   * The record component access flags (see {@link org.objectweb.asm.Opcodes}). The only valid value
+   * The record component access flags (see {@link scala.tools.asm.Opcodes}). The only valid value
    * is {@link Opcodes#ACC_DEPRECATED}.
    *
    * @deprecated this API is experimental.
@@ -60,7 +60,7 @@ public class RecordComponentNode extends RecordComponentVisitor {
   public String nameExperimental;
 
   /**
-   * The record component descriptor (see {@link org.objectweb.asm.Type}).
+   * The record component descriptor (see {@link scala.tools.asm.Type}).
    *
    * @deprecated this API is experimental.
    */
@@ -113,10 +113,10 @@ public class RecordComponentNode extends RecordComponentVisitor {
    * Instead, they must use the {@link #RecordComponentNode(int, int, String, String, String)}
    * version.
    *
-   * @param access the record component access flags (see {@link org.objectweb.asm.Opcodes}). The
+   * @param access the record component access flags (see {@link scala.tools.asm.Opcodes}). The
    *     only valid value is {@link Opcodes#ACC_DEPRECATED}.
    * @param name the record component name.
-   * @param descriptor the record component descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the record component descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the record component signature.
    * @throws IllegalStateException If a subclass calls this constructor.
    * @deprecated this API is experimental.
@@ -135,10 +135,10 @@ public class RecordComponentNode extends RecordComponentVisitor {
    *
    * @param api the ASM API version implemented by this visitor. Must be {@link
    *     Opcodes#ASM8_EXPERIMENTAL}.
-   * @param access the record component access flags (see {@link org.objectweb.asm.Opcodes}). The
+   * @param access the record component access flags (see {@link scala.tools.asm.Opcodes}). The
    *     only valid value is {@link Opcodes#ACC_DEPRECATED}.
    * @param name the record component name.
-   * @param descriptor the record component descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the record component descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the record component signature.
    * @deprecated this API is experimental.
    */
