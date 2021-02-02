@@ -122,5 +122,5 @@ Push the branch to scala/scala-asm
 Create and push a tag to create a release
   - `git tag -s -m "scala-asm 5.2.0-scala-1" v5.2.0-scala-1 s-5.2`
   - `git push upstream-github --tags`
-  - Check the build on travis: https://travis-ci.org/scala/scala-asm/builds
+  - Check the build on travis: https://travis-ci.com/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
