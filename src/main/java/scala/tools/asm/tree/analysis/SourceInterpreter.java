@@ -61,9 +61,9 @@ public class SourceInterpreter extends Interpreter<SourceValue> implements Opcod
    * Constructs a new {@link SourceInterpreter}.
    *
    * @param api the ASM API version supported by this interpreter. Must be one of {@link
-   *     org.objectweb.asm.Opcodes#ASM4}, {@link org.objectweb.asm.Opcodes#ASM5}, {@link
-   *     org.objectweb.asm.Opcodes#ASM6}, {@link org.objectweb.asm.Opcodes#ASM7}, {@link
-   *     org.objectweb.asm.Opcodes#ASM8} or or {@link org.objectweb.asm.Opcodes#ASM9}.
+   *     scala.tools.asm.Opcodes#ASM4}, {@link scala.tools.asm.Opcodes#ASM5}, {@link
+   *     scala.tools.asm.Opcodes#ASM6}, {@link scala.tools.asm.Opcodes#ASM7}, {@link
+   *     scala.tools.asm.Opcodes#ASM8} or or {@link scala.tools.asm.Opcodes#ASM9}.
    */
   protected SourceInterpreter(final int api) {
     super(api);

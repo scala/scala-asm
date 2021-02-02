@@ -1554,7 +1554,7 @@ public class Textifier extends Printer {
    *
    * @param numTypes the number of stack map frame types in 'frameTypes'.
    * @param frameTypes an array of stack map frame types, in the format described in {@link
-   *     org.objectweb.asm.MethodVisitor#visitFrame}.
+   *     scala.tools.asm.MethodVisitor#visitFrame}.
    */
   private void appendFrameTypes(final int numTypes, final Object[] frameTypes) {
     for (int i = 0; i < numTypes; ++i) {
