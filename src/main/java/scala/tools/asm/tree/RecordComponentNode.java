@@ -45,7 +45,7 @@ public class RecordComponentNode extends RecordComponentVisitor {
   /** The record component name. */
   public String name;
 
-  /** The record component descriptor (see {@link org.objectweb.asm.Type}). */
+  /** The record component descriptor (see {@link scala.tools.asm.Type}). */
   public String descriptor;
 
   /** The record component signature. May be {@literal null}. */
@@ -71,7 +71,7 @@ public class RecordComponentNode extends RecordComponentVisitor {
    * Instead, they must use the {@link #RecordComponentNode(int, String, String, String)} version.
    *
    * @param name the record component name.
-   * @param descriptor the record component descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the record component descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the record component signature.
    * @throws IllegalStateException If a subclass calls this constructor.
    */
@@ -88,7 +88,7 @@ public class RecordComponentNode extends RecordComponentVisitor {
    * @param api the ASM API version implemented by this visitor. Must be one of {@link Opcodes#ASM8}
    *     or {@link Opcodes#ASM9}.
    * @param name the record component name.
-   * @param descriptor the record component descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor the record component descriptor (see {@link scala.tools.asm.Type}).
    * @param signature the record component signature.
    */
   public RecordComponentNode(
