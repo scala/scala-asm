@@ -28,11 +28,11 @@
 package scala.tools.asm.tree;
 
 import java.util.Map;
-import org.objectweb.asm.ConstantDynamic;
-import org.objectweb.asm.Handle;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
+import scala.tools.asm.ConstantDynamic;
+import scala.tools.asm.Handle;
+import scala.tools.asm.MethodVisitor;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.Type;
 
 /**
  * A node that represents an LDC instruction.
