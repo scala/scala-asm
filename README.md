@@ -117,10 +117,10 @@ Push the branch to your fork, check everything
 Push the branch to scala/scala-asm
   - `git remote add upstream-github git@github.com:scala/scala-asm.git` if you didn't add the remote yet
   - `git push upstream-github s-5.2`
-  - Check the build on travis: https://travis-ci.com/scala/scala-asm/builds
+  - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
 
 Create and push a tag to create a release
   - `git tag -s -m "scala-asm 5.2.0-scala-1" v5.2.0-scala-1 s-5.2`
   - `git push upstream-github --tags`
-  - Check the build on travis: https://travis-ci.com/scala/scala-asm/builds
+  - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
