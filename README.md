@@ -24,8 +24,16 @@ We start a new branch for each ASM release and re-apply our changes in order to 
 
 ## Upgrading to a new version of ASM
 
+### Set up remotes
+
+To avoid confusion, let's not call the remote `origin`:
+
+  - `git remote rename origin upstream-github`
+
 If you haven't done so, add the upstream repostiory (https://gitlab.ow2.org/asm/asm) as a remote
   - `git remote add upstream-asm https://gitlab.ow2.org/asm/asm`
+
+### Make the new version
 
 Pull changes / tags from upstream
   - `git fetch upstream-asm --tags`
