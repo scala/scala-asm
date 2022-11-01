@@ -12,7 +12,7 @@ This is a fork (a git clone) of the offical asm repository at https://gitlab.ow2
 
 Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm"`.
 
-For each ASM release there's a corresponding branch in this repo, e.g., [`s-5.2`](https://github.com/scala/scala-asm/commits/s-5.2) for ASM 5.2. These branches start at the corresponding ASM release tag, our customizations are commits on top.
+For each ASM release there's a corresponding branch in this repo, e.g., [`s-9.4`](https://github.com/scala/scala-asm/commits/s-9.4) for ASM 9.4. These branches start at the corresponding ASM release tag, our customizations are commits on top.
 
 The following changes are applied:
   - The package name is changed to `scala.tools.asm`
@@ -44,7 +44,7 @@ Review the upstream changes to see if there's anything that requires attention, 
   - https://github.com/scala/scala-asm/compare/ASM_9_3...ASM_9_4
 
 Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
-  - `git checkout -b s-5.2 ASM_9_4`
+  - `git checkout -b s-9.4 ASM_9_4`
 
 Get the script to prepare the sources
   - Check the history of the previous branch
