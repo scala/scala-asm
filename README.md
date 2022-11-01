@@ -119,3 +119,4 @@ Create and push a tag to create a release
   - `git push upstream-github --tags`
   - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
+  - Make yourself a sandwich while waiting for artifacts to appear at https://repo1.maven.org/maven2/org/scala-lang/modules/scala-asm/
