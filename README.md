@@ -33,17 +33,17 @@ Pull changes / tags from upstream
 Review the upstream changes to see if there's anything that requires attention, updates to scripts in this repo, or similar
   - https://asm.ow2.io/versions.html
   - `git push upstream-github --tags`
-  - https://github.com/scala/scala-asm/compare/ASM_5_1...ASM_5_2
+  - https://github.com/scala/scala-asm/compare/ASM_9_3...ASM_9_4
 
 Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
-  - `git checkout -b s-5.2 ASM_5_2`
+  - `git checkout -b s-5.2 ASM_9_4`
 
 Get the script to prepare the sources
   - Check the history of the previous branch
-    - `git log --oneline s-5.1`
+    - `git log --oneline s-9.3`
       ```
       679bfd52 [asm-cherry-pick] Script for deleting unused files and preparing sources
-      3d2e7dc4 (tag: ASM_5_1) Fixed bug #317606.
+      3d2e7dc4 (tag: ASM_9_3) Fixed bug #317606.
       ```
   - Cherry-pick the commit "Script for deleting unused files and preparing sources"
     - `git cherry-pick 679bfd52`
@@ -52,11 +52,11 @@ Run the script
   - `./scripts/selectAndPrepareSources`
 
 Push the branch, verify that the commits created by the script look correct
-  - `git push --set-upstream YOUR_REMOTE_NAME s-5.2`
+  - `git push --set-upstream YOUR_REMOTE_NAME s-9.4`
 
 Get the build infrastructure
   - Check the history of the previous branch
-    - `git log --oneline s-5.1`
+    - `git log --oneline s-9.3`
       ```
       5caad9a8 [asm-cherry-pick] Build infrastructure
       1b2484be Remove trailing whitespace
@@ -70,7 +70,7 @@ Check that the build works correctly
 
 Cherry-pick all commits that went on top of the previous branch
   - Check the history of the previous branch
-    - `git log --oneline --graph s-5.1`
+    - `git log --oneline --graph s-9.3`
       ```
       * cdf0cf00 (tag: v5.1.0-scala-2, upstream-github/s-5.1, lrytz-github/s-5.1, s-5.1) [asm-cherry-pick] Support Java 9 bytecode format
       * ee4ea3bc [asm-cherry-pick] Fill exception message for max String literal length
@@ -96,11 +96,11 @@ Cherry-pick all commits that went on top of the previous branch
       * 679bfd52 [asm-cherry-pick] Script for deleting unused files and preparing sources
       * 3d2e7dc4 (tag: ASM_5_1) Fixed bug #317606.
       ```
-  - Cherry-pick the commits that are not yet included (`5caad9a8..s-5.1` - note that the a range `A..B` includes `B` but not `A`)
+  - Cherry-pick the commits that are not yet included (`5caad9a8..s-9.3` - note that the a range `A..B` includes `B` but not `A`)
     - Check your commit range
-      - `git log --oneline 5caad9a8..s-5.1`
+      - `git log --oneline 5caad9a8..s-9.3`
     - Cherry-pick the commits
-      - `git cherry-pick 5caad9a8..s-5.1`
+      - `git cherry-pick 5caad9a8..s-9.3`
 
 Rebase and clean up
   - Make sure that all commits have the the `[asm-cherry-pick]` flag
@@ -116,11 +116,11 @@ Push the branch to your fork, check everything
 
 Push the branch to scala/scala-asm
   - `git remote add upstream-github git@github.com:scala/scala-asm.git` if you didn't add the remote yet
-  - `git push upstream-github s-5.2`
+  - `git push upstream-github s-9.4`
   - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
 
 Create and push a tag to create a release
-  - `git tag -s -m "scala-asm 5.2.0-scala-1" v5.2.0-scala-1 s-5.2`
+  - `git tag -s -m "scala-asm 9.4.0-scala-1" v9.4.0-scala-1 s-9.4`
   - `git push upstream-github --tags`
   - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
