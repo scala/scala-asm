@@ -77,27 +77,11 @@ Check that the build works correctly
   - `for f in target/*.jar; do unzip -l $f; done`
 
 Cherry-pick all commits that went on top of the previous branch
-  - Check the history of the previous branch
-    - `git log --oneline --graph --first-parent upstream-github/s-9.4`
-      ```
-      * 3c41f954 (tag: v9.4.0-scala-1, upstream-github/s-9.4, SethTisue/s-9.4) [asm-cherry-pick] fix class names for experimental API check
-      * f2e29937 [asm-cherry-pick] Call interpreter.copyInstruction consistently
-      * 6a0507c2 [asm-cherry-pick] Ensure instructions belong only to one list
-      * fc950013 [asm-cherry-pick] Build infrastructure
-      * e5c4e053 Update `@links`, `@associates`
-      * 011b74ef Update imports
-      * f5172721 Update package clauses
-      * e43e3ae9 Move sources to src/main/java/scala/tools/asm
-      * 57f2b81b Convert all line endings to unix
-      * 04f0c125 Remove unused files
-      * 89cc9093 [asm-cherry-pick] Script for deleting unused files and preparing sources
-      * d7888a87 (tag: ASM_9_4) Merge branch 'code-smells' into 'master'
-      ```
-  - Cherry-pick the commits that are not yet included (`fc950013..upstream-github/s-9.4` - note that the a range `A..B` includes `B` but not `A`)
-    - Check your commit range
-      - `git log --oneline fc950013..upstream-github/s-9.4`
-    - Cherry-pick the commits
-      - `git cherry-pick fc950013..upstream-github/s-9.4`
+  - Compare the history of the previous branch to the current branch
+    - `git log --oneline --graph --first-parent upstream-github/s-9.4 | grep asm-cherry-pick`
+    - `git log --oneline --graph --first-parent @ | grep asm-cherry-pick`
+  - Cherry-pick the commits that are not yet included
+    - `git cherry-pick ...`, repeated for each missing SHA
 
 Rebase and clean up
   - Make sure that all commits have the the `[asm-cherry-pick]` flag
@@ -107,9 +91,6 @@ Rebase and clean up
 Check that the build works correctly
   - `sbt clean update test publishLocal`
   - `for f in target/*.jar; do unzip -l $f; done`
-
-Push the branch to your fork, check everything
-  - `git push YOUR_REMOTE_NAME s-9.5`
 
 Push the branch to scala/scala-asm
   - `git push upstream-github s-9.5`
