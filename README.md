@@ -1,3 +1,4 @@
+
 # A fork of ASM for the Scala Compiler
 
 [<img src="https://img.shields.io/travis/scala/scala-asm.svg"/>](https://travis-ci.org/scala/scala-asm)
@@ -12,7 +13,7 @@ This is a fork (a git clone) of the offical asm repository at https://gitlab.ow2
 
 Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm"`.
 
-For each ASM release there's a corresponding branch in this repo, e.g., [`s-9.4`](https://github.com/scala/scala-asm/commits/s-9.4) for ASM 9.4. These branches start at the corresponding ASM release tag, our customizations are commits on top.
+For each ASM release there's a corresponding branch in this repo, e.g., [`s-9.5`](https://github.com/scala/scala-asm/commits/s-9.5) for ASM 9.5. These branches start at the corresponding ASM release tag, our customizations are commits on top.
 
 The following changes are applied:
   - The package name is changed to `scala.tools.asm`
@@ -41,14 +42,14 @@ Pull changes / tags from upstream
 Review the upstream changes to see if there's anything that requires attention, updates to scripts in this repo, or similar
   - https://asm.ow2.io/versions.html
   - `git push upstream-github --tags`
-  - https://github.com/scala/scala-asm/compare/ASM_9_3...ASM_9_4
+  - https://github.com/scala/scala-asm/compare/ASM_9_4...ASM_9_5
 
 Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
-  - `git checkout -b s-9.4 ASM_9_4`
+  - `git checkout -b s-9.5 ASM_9_5`
 
 Get the script to prepare the sources
   - In the history, find the commit "Script for deleting unused files and preparing sources"
-    - `git log --oneline upstream-github/s-9.3`
+    - `git log --oneline upstream-github/s-9.4`
       ```
       89cc9093 [asm-cherry-pick] Script for deleting unused files and preparing sources
       ```
@@ -59,11 +60,11 @@ Run the script
   - `./scripts/selectAndPrepareSources`
 
 Push the branch, verify that the commits created by the script look correct
-  - `git push --set-upstream YOUR_REMOTE_NAME s-9.4`
+  - `git push --set-upstream YOUR_REMOTE_NAME s-9.5`
 
 Get the build infrastructure
   - In the history, find the commit "Build infrastructure" commit
-    - `git log --oneline upstream-github/s-9.3`
+    - `git log --oneline upstream-github/s-9.4`
       ```
       fc950013 [asm-cherry-pick] Build infrastructure
       ```
@@ -77,9 +78,9 @@ Check that the build works correctly
 
 Cherry-pick all commits that went on top of the previous branch
   - Check the history of the previous branch
-    - `git log --oneline --graph --first-parent upstream-github/s-9.3`
+    - `git log --oneline --graph --first-parent upstream-github/s-9.4`
       ```
-      * 3c41f954 (tag: v9.3.0-scala-1, upstream-github/s-9.3, SethTisue/s-9.3) [asm-cherry-pick] fix class names for experimental API check
+      * 3c41f954 (tag: v9.4.0-scala-1, upstream-github/s-9.4, SethTisue/s-9.4) [asm-cherry-pick] fix class names for experimental API check
       * f2e29937 [asm-cherry-pick] Call interpreter.copyInstruction consistently
       * 6a0507c2 [asm-cherry-pick] Ensure instructions belong only to one list
       * fc950013 [asm-cherry-pick] Build infrastructure
@@ -90,13 +91,13 @@ Cherry-pick all commits that went on top of the previous branch
       * 57f2b81b Convert all line endings to unix
       * 04f0c125 Remove unused files
       * 89cc9093 [asm-cherry-pick] Script for deleting unused files and preparing sources
-      * d7888a87 (tag: ASM_9_3) Merge branch 'code-smells' into 'master'
+      * d7888a87 (tag: ASM_9_4) Merge branch 'code-smells' into 'master'
       ```
-  - Cherry-pick the commits that are not yet included (`fc950013..upstream-github/s-9.3` - note that the a range `A..B` includes `B` but not `A`)
+  - Cherry-pick the commits that are not yet included (`fc950013..upstream-github/s-9.4` - note that the a range `A..B` includes `B` but not `A`)
     - Check your commit range
-      - `git log --oneline fc950013..upstream-github/s-9.3`
+      - `git log --oneline fc950013..upstream-github/s-9.4`
     - Cherry-pick the commits
-      - `git cherry-pick fc950013..upstream-github/s-9.3`
+      - `git cherry-pick fc950013..upstream-github/s-9.4`
 
 Rebase and clean up
   - Make sure that all commits have the the `[asm-cherry-pick]` flag
@@ -108,14 +109,14 @@ Check that the build works correctly
   - `for f in target/*.jar; do unzip -l $f; done`
 
 Push the branch to your fork, check everything
-  - `git push YOUR_REMOTE_NAME s-9.4`
+  - `git push YOUR_REMOTE_NAME s-9.5`
 
 Push the branch to scala/scala-asm
-  - `git push upstream-github s-9.4`
+  - `git push upstream-github s-9.5`
   - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
 
 Create and push a tag to create a release
-  - `git tag -s -m "scala-asm 9.4.0-scala-1" v9.4.0-scala-1 s-9.4`
+  - `git tag -s -m "scala-asm 9.5.0-scala-1" v9.5.0-scala-1 s-9.5`
   - `git push upstream-github --tags`
   - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
   - Check and release the staging repository on sonatype: https://oss.sonatype.org/
