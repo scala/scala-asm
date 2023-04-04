@@ -49,27 +49,27 @@ Create a new branch `s-x.y.z` starting at the ASM tag for version x.y.z:
 
 Get the script to prepare the sources
   - In the history, find the commit "Script for deleting unused files and preparing sources"
-    - `git log --oneline upstream-github/s-9.4`
+    - `git log --oneline upstream-github/s-9.4 | grep 'Script for deleting'`
       ```
-      89cc9093 [asm-cherry-pick] Script for deleting unused files and preparing sources
+      af285877 [asm-cherry-pick] Script for deleting unused files and preparing sources
       ```
   - Cherry-pick 
-    - `git cherry-pick 89cc9093`
+    - `git cherry-pick af285877`
 
 Run the script
   - `./scripts/selectAndPrepareSources`
 
 Push the branch, verify that the commits created by the script look correct
-  - `git push --set-upstream YOUR_REMOTE_NAME s-9.5`
+  - `git push --set-upstream upstream-github s-9.5`
 
 Get the build infrastructure
   - In the history, find the commit "Build infrastructure" commit
-    - `git log --oneline upstream-github/s-9.4`
+    - `git log --oneline upstream-github/s-9.4 | grep 'Build infra'`
       ```
-      fc950013 [asm-cherry-pick] Build infrastructure
+      06ff86de [asm-cherry-pick] Build infrastructure
       ```
   - Cherry-pick the commit
-    - `git cherry-pick fc950013`
+    - `git cherry-pick 06ff86de`
 
 Check that the build works correctly
   - make sure you're on JDK 8 (`java -version`)
