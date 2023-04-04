@@ -1,4 +1,4 @@
-package org.objectweb.asm.tree;
+package scala.tools.asm.tree;
 
 /**
  * Exception thrown in {@link AnnotationNode#check}, {@link ClassNode#check}, {@link
