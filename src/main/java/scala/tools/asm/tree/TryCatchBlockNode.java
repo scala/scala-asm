@@ -67,7 +67,7 @@ public class TryCatchBlockNode {
    * @param end the end of the exception handler's scope (exclusive).
    * @param handler the beginning of the exception handler's code.
    * @param type the internal name of the type of exceptions handled by the handler (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}), or {@literal null} to catch any exceptions (for
+   *     scala.tools.asm.Type#getInternalName()}), or {@literal null} to catch any exceptions (for
    *     "finally" blocks).
    */
   public TryCatchBlockNode(
