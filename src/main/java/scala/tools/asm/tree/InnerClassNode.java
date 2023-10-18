@@ -40,12 +40,12 @@ import scala.tools.asm.ClassVisitor;
  */
 public class InnerClassNode {
 
-  /** The internal name of an inner class (see {@link org.objectweb.asm.Type#getInternalName()}). */
+  /** The internal name of an inner class (see {@link scala.tools.asm.Type#getInternalName()}). */
   public String name;
 
   /**
    * The internal name of the class to which the inner class belongs (see {@link
-   * org.objectweb.asm.Type#getInternalName()}). May be {@literal null}.
+   * scala.tools.asm.Type#getInternalName()}). May be {@literal null}.
    */
   public String outerName;
 
@@ -64,9 +64,9 @@ public class InnerClassNode {
   /**
    * Constructs a new {@link InnerClassNode} for an inner class C.
    *
-   * @param name the internal name of C (see {@link org.objectweb.asm.Type#getInternalName()}).
+   * @param name the internal name of C (see {@link scala.tools.asm.Type#getInternalName()}).
    * @param outerName the internal name of the class or interface C is a member of (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}). Must be {@literal null} if C is not the member
+   *     scala.tools.asm.Type#getInternalName()}). Must be {@literal null} if C is not the member
    *     of a class or interface (e.g. for local or anonymous classes).
    * @param innerName the (simple) name of C. Must be {@literal null} for anonymous inner classes.
    * @param access the access flags of C originally declared in the source code from which this

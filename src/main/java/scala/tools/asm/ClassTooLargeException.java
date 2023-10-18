@@ -43,7 +43,7 @@ public final class ClassTooLargeException extends IndexOutOfBoundsException {
    * Constructs a new {@link ClassTooLargeException}.
    *
    * @param className the internal name of the class (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param constantPoolCount the number of constant pool items of the class.
    */
   public ClassTooLargeException(final String className, final int constantPoolCount) {
@@ -53,7 +53,7 @@ public final class ClassTooLargeException extends IndexOutOfBoundsException {
   }
 
   /**
-   * Returns the internal name of the class (see {@link org.objectweb.asm.Type#getInternalName()}).
+   * Returns the internal name of the class (see {@link scala.tools.asm.Type#getInternalName()}).
    *
    * @return the internal name of the class.
    */

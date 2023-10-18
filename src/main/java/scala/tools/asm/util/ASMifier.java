@@ -1167,7 +1167,7 @@ public class ASMifier extends Printer {
    * Visits a class, field or method type annotation.
    *
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#FIELD}. See {@link org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#FIELD}. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be {@literal null} if the annotation targets
    *     'typeRef' as a whole.
@@ -1185,7 +1185,7 @@ public class ASMifier extends Printer {
    *
    * @param method the name of the visit method for this type of annotation.
    * @param typeRef a reference to the annotated type. The sort of this type reference must be
-   *     {@link org.objectweb.asm.TypeReference#FIELD}. See {@link org.objectweb.asm.TypeReference}.
+   *     {@link scala.tools.asm.TypeReference#FIELD}. See {@link scala.tools.asm.TypeReference}.
    * @param typePath the path to the annotated type argument, wildcard bound, array element type, or
    *     static inner type within 'typeRef'. May be {@literal null} if the annotation targets
    *     'typeRef' as a whole.
@@ -1550,7 +1550,7 @@ public class ASMifier extends Printer {
    *
    * @param numTypes the number of stack map frame types in 'frameTypes'.
    * @param frameTypes an array of stack map frame types, in the format described in {@link
-   *     org.objectweb.asm.MethodVisitor#visitFrame}.
+   *     scala.tools.asm.MethodVisitor#visitFrame}.
    */
   private void declareFrameTypes(final int numTypes, final Object[] frameTypes) {
     for (int i = 0; i < numTypes; ++i) {
@@ -1565,7 +1565,7 @@ public class ASMifier extends Printer {
    *
    * @param numTypes the number of stack map frame types in 'frameTypes'.
    * @param frameTypes an array of stack map frame types, in the format described in {@link
-   *     org.objectweb.asm.MethodVisitor#visitFrame}.
+   *     scala.tools.asm.MethodVisitor#visitFrame}.
    */
   private void appendFrameTypes(final int numTypes, final Object[] frameTypes) {
     for (int i = 0; i < numTypes; ++i) {

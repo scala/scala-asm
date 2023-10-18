@@ -181,7 +181,7 @@ public abstract class SignatureVisitor {
    * Starts the visit of a signature corresponding to a class or interface type.
    *
    * @param name the internal name of the class or interface (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    */
   public void visitClassType(final String name) {}
 
