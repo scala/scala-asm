@@ -9,7 +9,7 @@ This repository contains a fork of the ASM Java bytecode manipulation and analys
 
 ## Structure
 
-This is a fork (a git clone) of the offical asm repository at https://gitlab.ow2.org/asm/asm.
+This is a fork (a git clone) of the official asm repository at https://gitlab.ow2.org/asm/asm.
 
 Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm"`.
 
@@ -31,7 +31,7 @@ To avoid confusion, let's not call the remote `origin`:
 
   - `git remote rename origin upstream-github`
 
-If you haven't done so, add the upstream repostiory (https://gitlab.ow2.org/asm/asm) as a remote
+If you haven't done so, add the upstream repository (https://gitlab.ow2.org/asm/asm) as a remote
   - `git remote add upstream-asm https://gitlab.ow2.org/asm/asm`
 
 ### Make the new version
