@@ -27,7 +27,7 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.signature;
 
-import org.objectweb.asm.Opcodes;
+import scala.tools.asm.Opcodes;
 
 /**
  * A visitor to visit a generic signature. The methods of this interface must be called in one of

@@ -29,24 +29,24 @@ package scala.tools.asm.util;
 
 import java.util.Collections;
 import java.util.List;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.AbstractInsnNode;
-import org.objectweb.asm.tree.FrameNode;
-import org.objectweb.asm.tree.InsnList;
-import org.objectweb.asm.tree.InsnNode;
-import org.objectweb.asm.tree.JumpInsnNode;
-import org.objectweb.asm.tree.LabelNode;
-import org.objectweb.asm.tree.LookupSwitchInsnNode;
-import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.TableSwitchInsnNode;
-import org.objectweb.asm.tree.TryCatchBlockNode;
-import org.objectweb.asm.tree.TypeInsnNode;
-import org.objectweb.asm.tree.analysis.Analyzer;
-import org.objectweb.asm.tree.analysis.AnalyzerException;
-import org.objectweb.asm.tree.analysis.Frame;
-import org.objectweb.asm.tree.analysis.Interpreter;
-import org.objectweb.asm.tree.analysis.Value;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.Type;
+import scala.tools.asm.tree.AbstractInsnNode;
+import scala.tools.asm.tree.FrameNode;
+import scala.tools.asm.tree.InsnList;
+import scala.tools.asm.tree.InsnNode;
+import scala.tools.asm.tree.JumpInsnNode;
+import scala.tools.asm.tree.LabelNode;
+import scala.tools.asm.tree.LookupSwitchInsnNode;
+import scala.tools.asm.tree.MethodNode;
+import scala.tools.asm.tree.TableSwitchInsnNode;
+import scala.tools.asm.tree.TryCatchBlockNode;
+import scala.tools.asm.tree.TypeInsnNode;
+import scala.tools.asm.tree.analysis.Analyzer;
+import scala.tools.asm.tree.analysis.AnalyzerException;
+import scala.tools.asm.tree.analysis.Frame;
+import scala.tools.asm.tree.analysis.Interpreter;
+import scala.tools.asm.tree.analysis.Value;
 
 /**
  * An {@link Analyzer} subclass which checks that methods provide stack map frames where expected
