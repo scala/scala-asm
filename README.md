@@ -84,7 +84,7 @@ Cherry-pick all commits that went on top of the previous branch
     - `git cherry-pick ...`, repeated for each missing SHA
 
 Rebase and clean up
-  - Make sure that all commits have the the `[asm-cherry-pick]` flag
+  - Make sure that all commits have the `[asm-cherry-pick]` flag
   - Clean up the history
   - If there are changes to the build infrastructure, squash them into the "Build infrastructure" commit
 
