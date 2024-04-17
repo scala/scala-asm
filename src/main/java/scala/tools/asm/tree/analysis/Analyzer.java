@@ -162,9 +162,11 @@ public class Analyzer<V extends Value> implements Opcodes {
         int insnOpcode = insnNode.getOpcode();
         int insnType = insnNode.getType();
 
-        if (insnType == AbstractInsnNode.LABEL
-            || insnType == AbstractInsnNode.LINE
-            || insnType == AbstractInsnNode.FRAME) {
+        boolean isNoop = insnType == AbstractInsnNode.LABEL
+                || insnType == AbstractInsnNode.LINE
+                || insnType == AbstractInsnNode.FRAME;
+
+        if (isNoop) {
           merge(insnIndex + 1, oldFrame, subroutine);
           newControlFlowEdge(insnIndex, insnIndex + 1);
         } else {
@@ -270,12 +272,14 @@ public class Analyzer<V extends Value> implements Opcodes {
               handler.clearStack();
               handler.push(exceptionValue);
               merge(insnList.indexOf(tryCatchBlock.handler), handler, subroutine);
-              // Merge the frame *after* this instruction, with its stack cleared and an exception
-              // pushed, with the handler's frame.
-              handler = newFrame(currentFrame);
-              handler.clearStack();
-              handler.push(exceptionValue);
-              merge(insnList.indexOf(tryCatchBlock.handler), handler, subroutine);
+              if (!isNoop) {
+                // Merge the frame *after* this instruction, with its stack cleared and an exception
+                // pushed, with the handler's frame.
+                handler = newFrame(currentFrame);
+                handler.clearStack();
+                handler.push(exceptionValue);
+                merge(insnList.indexOf(tryCatchBlock.handler), handler, subroutine);
+              }
             }
           }
         }
