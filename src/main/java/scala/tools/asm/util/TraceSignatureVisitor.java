@@ -30,8 +30,8 @@ package scala.tools.asm.util;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.signature.SignatureVisitor;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.signature.SignatureVisitor;
 
 /**
  * A {@link SignatureVisitor} that builds the Java generic type declaration corresponding to the
