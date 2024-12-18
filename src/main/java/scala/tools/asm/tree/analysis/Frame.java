@@ -130,7 +130,7 @@ public class Frame<V extends Value> {
 
   /**
    * Initializes a frame corresponding to the target or to the successor of a jump instruction. This
-   * method is called by {@link Analyzer#analyze(String, org.objectweb.asm.tree.MethodNode)} while
+   * method is called by {@link Analyzer#analyze(String, scala.tools.asm.tree.MethodNode)} while
    * interpreting jump instructions. It is called once for each possible target of the jump
    * instruction, and once for its successor instruction (except for GOTO and JSR), before the frame
    * is merged with the existing frame at this location. The default implementation of this method
