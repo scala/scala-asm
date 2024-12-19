@@ -11,3 +11,6 @@ homepage := Some(url("https://github.com/scala/scala-asm"))
 licenses := Seq("BSD 3-clause" -> url("http://opensource.org/licenses/BSD-3-Clause"))
 scmInfo := Some(ScmInfo(url("https://github.com/scala/scala-asm"),
   "scm:git:git@github.com:scala/scala-asm.git"))
+
+// override sbt-dynver (sbt-ci-release brings it, but we don't want it)
+version := "9.7.1-scala-1"
