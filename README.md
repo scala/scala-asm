@@ -67,6 +67,9 @@ Get the build infrastructure
   - Cherry-pick the commit
     - `git cherry-pick 06ff86de`
 
+Update the version number:
+  - Change the `version :=` line in build.sbt and commit it
+
 Check that the build works correctly
   - make sure you're on JDK 8 (`java -version`)
   - `sbt clean update test publishLocal`
