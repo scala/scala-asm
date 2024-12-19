@@ -1,15 +1,11 @@
+# A fork of ASM for the Scala compiler
 
-# A fork of ASM for the Scala Compiler
-
-[<img src="https://img.shields.io/travis/scala/scala-asm.svg"/>](https://travis-ci.org/scala/scala-asm)
-[<img src="https://img.shields.io/maven-central/v/org.scala-lang.modules/scala-asm.svg"/>](http://search.maven.org/#search%7Cga%7C1%7Cg%3Aorg.scala-lang.modules%20a%3Ascala-asm)
-
-This repository contains a fork of the ASM Java bytecode manipulation and analysis framework for the Scala compiler.
+This repository contains a fork of the ASM Java bytecode manipulation and analysis framework, for use by the Scala compiler.
 
 
 ## Structure
 
-This is a fork (a git clone) of the official asm repository at https://gitlab.ow2.org/asm/asm.
+This is a fork (a git clone) of the official ASM repository at https://gitlab.ow2.org/asm/asm.
 
 Tags of the form `ASM_X_Y*` come from the upstream repo. Tags named `vX.Y.Z-scala-n` are created in this repo and used to release our fork under `"org.scala-lang.modules" % "scala-asm"`.
 
@@ -53,7 +49,7 @@ Get the script to prepare the sources
       ```
       af285877 [asm-cherry-pick] Script for deleting unused files and preparing sources
       ```
-  - Cherry-pick 
+  - Cherry-pick
     - `git cherry-pick af285877`
 
 Run the script
@@ -94,11 +90,10 @@ Check that the build works correctly
 
 Push the branch to scala/scala-asm
   - `git push upstream-github s-9.5`
-  - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
+  - Check the build on GitHub Actions
 
 Create and push a tag to create a release
   - `git tag -s -m "scala-asm 9.5.0-scala-1" v9.5.0-scala-1 s-9.5`
   - `git push upstream-github --tags`
-  - Check the build on travis: https://app.travis-ci.com/github/scala/scala-asm/builds
-  - Check and release the staging repository on sonatype: https://oss.sonatype.org/
+  - Check the release build log on GitHub Actions
   - Make yourself a sandwich while waiting for artifacts to appear at https://repo1.maven.org/maven2/org/scala-lang/modules/scala-asm/
