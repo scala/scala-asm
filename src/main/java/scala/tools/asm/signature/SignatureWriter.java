@@ -27,7 +27,7 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.signature;
 
-import org.objectweb.asm.Opcodes;
+import scala.tools.asm.Opcodes;
 
 /**
  * A SignatureVisitor that generates signature literals, as defined in the Java Virtual Machine

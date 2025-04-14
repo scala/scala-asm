@@ -28,8 +28,8 @@
 package scala.tools.asm.tree.analysis;
 
 import java.util.List;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.Type;
 
 /**
  * An extended {@link BasicVerifier} that performs more precise verifications. This verifier
