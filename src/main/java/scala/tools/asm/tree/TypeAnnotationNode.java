@@ -27,8 +27,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.tree;
 
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.TypePath;
+import scala.tools.asm.Opcodes;
+import scala.tools.asm.TypePath;
 
 /**
  * A node that represents a type annotation.
