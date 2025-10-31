@@ -38,7 +38,7 @@ import scala.tools.asm.Opcodes;
  */
 public class MultiANewArrayInsnNode extends AbstractInsnNode {
 
-  /** An array type descriptor (see {@link org.objectweb.asm.Type}). */
+  /** An array type descriptor (see {@link scala.tools.asm.Type}). */
   public String desc;
 
   /** Number of dimensions of the array to allocate. */
@@ -47,7 +47,7 @@ public class MultiANewArrayInsnNode extends AbstractInsnNode {
   /**
    * Constructs a new {@link MultiANewArrayInsnNode}.
    *
-   * @param descriptor an array type descriptor (see {@link org.objectweb.asm.Type}).
+   * @param descriptor an array type descriptor (see {@link scala.tools.asm.Type}).
    * @param numDimensions the number of dimensions of the array to allocate.
    */
   public MultiANewArrayInsnNode(final String descriptor, final int numDimensions) {
