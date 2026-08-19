@@ -38,7 +38,7 @@ import scala.tools.asm.ModuleVisitor;
 public class ModuleOpenNode {
 
   /**
-   * The internal name of the opened package (see {@link org.objectweb.asm.Type#getInternalName()}).
+   * The internal name of the opened package (see {@link scala.tools.asm.Type#getInternalName()}).
    */
   public String packaze;
 
@@ -58,7 +58,7 @@ public class ModuleOpenNode {
    * Constructs a new {@link ModuleOpenNode}.
    *
    * @param packaze the internal name of the opened package (see {@link
-   *     org.objectweb.asm.Type#getInternalName()}).
+   *     scala.tools.asm.Type#getInternalName()}).
    * @param access the access flag of the opened package, valid values are among {@code
    *     ACC_SYNTHETIC} and {@code ACC_MANDATED}.
    * @param modules the fully qualified names (using dots) of the modules that can use deep
