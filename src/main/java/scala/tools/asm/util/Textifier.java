@@ -1442,7 +1442,7 @@ public class Textifier extends Printer {
    * @param handle a handle.
    * @deprecated use {@link #appendHandle(Handle, String)} instead.
    */
-  @Deprecated(forRemoval = false)
+  @Deprecated
   protected void appendHandle(final Handle handle) {
     appendHandle(handle, tab3);
   }

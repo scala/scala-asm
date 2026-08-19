@@ -56,7 +56,7 @@ public interface Opcodes {
    *
    * @deprecated This API is experimental.
    */
-  @Deprecated(forRemoval = false)
+  @Deprecated
   int ASM10_EXPERIMENTAL = 1 << 24 | 10 << 16 | 0 << 8;
 
   /*

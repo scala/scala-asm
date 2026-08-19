@@ -95,7 +95,7 @@ public class Attribute {
    *     a Code attribute that contains labels.
    * @deprecated no longer used by ASM.
    */
-  @Deprecated(forRemoval = false)
+  @Deprecated
   protected Label[] getLabels() {
     return new Label[0];
   }
