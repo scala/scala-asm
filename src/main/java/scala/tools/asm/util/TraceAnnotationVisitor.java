@@ -27,8 +27,8 @@
 // THE POSSIBILITY OF SUCH DAMAGE.
 package scala.tools.asm.util;
 
-import org.objectweb.asm.AnnotationVisitor;
-import org.objectweb.asm.Opcodes;
+import scala.tools.asm.AnnotationVisitor;
+import scala.tools.asm.Opcodes;
 
 /**
  * An {@link AnnotationVisitor} that prints the annotations it visits with a {@link Printer}.
